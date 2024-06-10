@@ -1,0 +1,35 @@
+.head-3 {
+    color: red;
+    margin-top: 80px;
+    margin-bottom: 15px;
+    text-align: left;
+    margin-left: 100px;
+}
+.benefit-1 {
+    text-align: left;
+    width: 50%;
+    margin-left: 60px;
+}
+.redline {
+    background-color: rgb(249, 37, 37);
+    height: 190px;
+    width: 55%;
+    margin-top: 200px;
+    margin-left: 417px;
+}
+.pic {
+    height: 300px;
+    width: 250px;
+}
+.pic-1 {
+    position: relative;
+    width: 100%;
+    top: -600px;
+    left: 1034px;
+}
+.benefit-contailer {
+    width: 72.5%;
+    margin-left: 351px;
+}
+
+

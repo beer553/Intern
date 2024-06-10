@@ -1,0 +1,103 @@
+  .page-container {
+    text-align: center;
+    margin-top: 50px;
+    width: 72.5%;
+    margin-left: 351px;
+  }
+  
+  .page-container h1 {
+    font-size: 24px;
+    color: red;
+    margin-right: 230px;
+  }
+  .page-container p {
+    font-size: 18px;
+    margin-top: 0;
+    margin-bottom: 0px;
+  }
+  .status {
+    color: #333; 
+    padding: 10px;
+    border-radius: 5px;
+    display: inline-block;
+    text-align: center;
+    position: relative;
+    bottom: 75px;
+    width: 400px;
+    margin-bottom: 0;
+}
+.consideration {
+    background-color: yellow;
+    color: black;
+    border-radius: 10px;
+    height: 35px;
+    padding-top: 10px;
+    width: 100%;
+  }
+  .under-review {
+    background-color: rgb(255, 0, 0);
+    color: black;
+    border-radius: 10px;
+    height: 35px;
+    padding-top: 10px;
+    width: 100%;
+  }
+  .approved {
+    background-color: rgb(0, 231, 0);
+    color: rgb(0, 0, 0);
+    border-radius: 10px;
+    height: 35px;
+    padding-top: 10px;
+    width: 100%;
+  }
+  .wait {
+    margin-top: 40px;
+    margin-bottom: 30px ;
+    width: 100px;
+}
+.status-2 {
+    margin-top: 0;
+  }
+  .status-2 p {
+    padding-bottom: 10px;
+  }
+  .underline {
+    width: 80%;
+    height: 1px;
+    background-color: black;
+    margin-left: 100px;
+    margin-top: 50px;
+  }
+  .additional-info {
+    text-align: left;
+    margin-left: 90px;
+  }
+  .special-message {
+    text-align: left;
+    margin-left: 80px;
+    color: red;
+  }
+  .confirm-button, .decline-button {
+    margin: 10px;
+    padding: 10px 50px;
+    font-size: 20px;
+    border: none;
+    cursor: pointer;
+    align-items: center;
+  }
+  
+  .confirm-button {
+    background: none;
+    color: rgb(0, 231, 0);
+  }
+  
+  .decline-button {
+    background: none;
+    color: rgb(255, 0, 0);
+  }
+  .button-icon {
+    margin-right: 8px;
+    width: 50px;
+    height: 50px;
+  }
+  

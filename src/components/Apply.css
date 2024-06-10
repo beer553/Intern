@@ -1,0 +1,389 @@
+
+.head {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #ff47477c; 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 100%;
+}
+
+.logo-3 {
+    height: 150px;
+    text-align: left;
+    display: flex;
+}
+.me {
+    height: 90px;
+    text-align: right;
+    padding-right: 35px;
+}
+.me .myname {
+    padding-right: 47px;
+    position: relative;
+    top: -15px;
+}
+.ul {
+    width: 100%;
+    display: flex ;
+    justify-content: center;
+    align-items: center;
+    list-style: none;
+    margin: 0;
+}
+ul li {
+    margin: 0 6rem;
+    align-items: center;
+    padding-top: 15px;
+}
+ul li a {
+    color: aliceblue;
+    text-decoration: none;
+}
+.navbar {
+    background-color: black;
+    height: 50px;
+}
+.aa {
+    width: 20px;
+    height: 80px;
+    background-color: red;
+    margin: 25px;
+    position: relative;
+    left: 50px ;
+    top: 60px;
+    clear: left;
+}
+.bb {
+    position: relative;
+    right: 490px;
+    bottom: 20px;
+}
+.line-2 {
+    width: 2px;
+    height: 1400px;
+    background-color: black;
+    position: relative;
+    left: 300px;
+    top: -1920px;
+}
+.data {
+    color: red;
+    position: relative;
+    top: 110px;
+    right: 250PX;
+}
+.prefix-1 {
+    position: relative;
+    left: 350px;
+    top: -30px;
+}
+.from-group-2 .name-1 {
+    position: relative;
+    top: -77px;
+    left: 600px;
+}
+.prefix-1,
+.name-1,
+.last-name,
+.nickname,
+.form-item,
+.firstname-1,
+.lastname-1,
+.nickname-1,
+.age,
+.birth-date,
+.id-card,
+.nationality,
+.religion,
+.phone,
+.facebook,
+.lineId,
+.email2,
+.email3,
+.gender,
+.education,
+.faculty,
+.major,
+.education-level,
+.education-levell,
+.gpa,
+.hobbies,
+.special-skills,
+.position{
+    width: 200px;
+    height: 30px;
+}
+.email2,
+.email3 {
+    width: 300px;
+    height: 30px;
+}
+.current-address,
+.address{
+    width: 350px;
+    height: 100px;
+}
+.prefix-1 .select,
+.name-1 .firstname,
+.last-name .last,
+.nickname .nick,
+.form-item .selectt,
+.firstname-1 .firstname-2,
+.lastname-1 .lastname-2,
+.nickname-1 .nickname-2,
+.age .age-1,
+.birth-date .birth-date-1,
+.id-card .id-card-1,
+.nationality .nationality-1,
+.religion .religion-1,
+.phone .phone-1,
+.facebook .facebook-1,
+.lineId .lineId-1,
+.email2 .email2-1,
+.email3 .email3-1,
+.address .address-1,
+.current-address .current-address-1,
+.education .education-1,
+.faculty .faculty-1,
+.major .major-1,
+.education-level .education-level-1,
+.education-levell .education-levell-1,
+.gpa .gpa-1,
+.hobbies .hobbies-1,
+.special-skills .special-skills-1,
+.position .position-1{
+    border-radius: 5px;
+    width: 100%;
+    height: 100%;
+    padding: 5px;
+    box-sizing: border-box;
+}
+.p1 {
+    text-align: left;
+}
+.from-group-2 .last-name {
+    position: relative;
+    top: -123px ;
+    left: 850px;
+}
+.from-group-2 .nickname {
+    position: relative;
+    top: -169px;
+    left: 1090px;
+}
+.from-group-2 .form-item {
+    position: relative;
+    top: -110px;
+    left: 350px;
+}
+.from-group-2 .firstname-1{
+    position: relative;
+    top: -156px;
+    left: 600px;
+}
+.from-group-2 .lastname-1 {
+    position: relative;
+    top: -202px;
+    left: 850px;
+}
+.from-group-2 .nickname-1 {
+    position: relative;
+    top: -248px;
+    left: 1090px;
+}
+.from-group-2 .age {
+    position: relative;
+    top: -190px;
+    left: 350px;
+}
+.from-group-2 .birth-date {
+    position: relative;
+    top: -236px;
+    left: 600px;
+}
+.from-group-2 .id-card {
+    position: relative;
+    top: -282px;
+    left: 850px;
+}
+.from-group-2 .nationality {
+    position: relative;
+    top: -328px;
+    left: 1090px;
+}
+.from-group-2 .religion {
+    position: relative;
+    top: -270px;
+    left: 350px;
+}
+.from-group-2 .phone {
+    position: relative;
+    top: -316px;
+    left: 600px;
+}
+.from-group-2 .facebook {
+    position: relative;
+    top: -362px;
+    left: 850px;
+}
+.from-group-2 .lineId {
+    position: relative;
+    top: -408px;
+    left: 1090px;
+}
+.from-group-2 .email2 {
+    position: relative;
+    top: -350px;
+    left: 350px;
+}
+.from-group-2 .email3 {
+    position: relative;
+    top: -396px;
+    left: 720px;
+}
+.from-group-2 .gender {
+    position: relative;
+    top: -443px;
+    left: 1090px;
+}
+input[type="checkbox"] {
+    transform: scale(1.9); 
+    margin-right: 10px;
+    margin-left: 30px;
+}
+.gender .gender-1 {
+    font-size: 1.2rem;
+}
+.from-group-2 .address {
+    position: relative;
+    top: -390px;
+    left: 350px;
+}
+.from-group-2 .current-address {
+    position: relative;
+    top: -506px;
+    left: 800px;
+}
+.from-group-2 .education {
+    position: relative;
+    top: -450px;
+    left: 350px;
+}
+.from-group-2 .faculty {
+    position: relative;
+    top: -496px;
+    left: 600px;
+}
+.from-group-2 .major {
+    position: relative;
+    top: -542px;
+    left: 850px;
+}
+.from-group-2 .education-level {
+    position: relative;
+    top: -588px;
+    left: 1090px;
+}
+.from-group-2 .education-levell {
+    position: relative;
+    top: -528px;
+    left: 350px;
+}
+.from-group-2 .gpa {
+    position: relative;
+    top: -574px;
+    left: 600px;
+}
+.from-group-2 .hobbies {
+    position: relative;
+    top: -620px;
+    left: 850px;
+}
+.from-group-2 .special-skills {
+    position: relative;
+    top: -666px;
+    left: 1090px;
+}
+.from-group-2 .position {
+    position: relative;
+    top: -610px;
+    left: 350px;
+}
+.from-group-2 .goodjob {
+    position: relative;
+    top: -550px;
+    left: 350px;
+    text-align: left;
+}
+.from-group-2 .program {
+    position: relative;
+    top: -540px;
+    left: 350px;
+    text-align: left;
+}
+.datestart,
+.dateend,
+.profile-picture {
+    width: 220px;
+    height: 30px;
+}
+.datestart .datestart-1,
+.dateend .dateend-1 {
+    border-radius: 5px;
+    width: 100%;
+    height: 100%;
+    padding: 5px;
+    box-sizing: border-box;
+}
+.from-group-2 .datestart {
+    position: relative;
+    top: -500px;
+    left: 350px;
+    text-align: left;
+}
+.from-group-2 .dateend {
+    position: relative;
+    top: -546px;
+    left: 700px;
+    text-align: left;
+}
+.from-group-2 .profile-picture {
+    position: relative;
+    top: -592px;
+    left: 1080px;
+}
+.from-group-2 .preview {
+    position: relative;
+    top:-530px;
+    left: 350px;
+    width: 10%;
+}
+.line-3 {
+    width: 930px;
+    height: 2px;
+    background-color: black;
+    position: relative;
+    top: -450px;
+    left: 340px;
+}
+.from-group-2 .applyintern {
+    border-radius: 5px;
+    border: none;
+    color: rgb(255, 255, 255);
+    background-color: rgb(104, 172, 1);
+    height: 40px;
+    width: 100px;
+    position: relative;
+    top: -490px;
+    left: 530px;
+    cursor: pointer;
+}
+.footnote-3 {
+    font-size: 16px;
+    background-color: black;
+    color: rgb(255, 255, 255);
+    width: 100%;
+    position: relative;
+    top: -1800px;
+}

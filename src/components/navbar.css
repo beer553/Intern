@@ -1,0 +1,79 @@
+.manubar .manu-1 {
+     text-align: left;
+     padding: 10px;
+     position: relative;
+     top: -535px;
+     left: 120px;
+     margin-top: 20px;
+}
+.manubar .manu-2 {
+     text-align: left;
+     padding: 10px;
+     position: relative;
+     top: -540px;
+     left: 120px;
+     margin-top: 20px;
+}
+.manubar .manu-3 {
+    text-align: left;
+    padding: 10px;
+    position: relative;
+    top: -544px;
+    left: 120px;
+    margin-top: 20px;
+}
+.manubar .manu-4 {
+    text-align: left;
+    padding: 10px;
+    position: relative;
+    top: -553px;
+    left: 120px;
+    margin-top: 20px;
+}
+.manubar .manu-5 {
+    text-align: left;
+    padding: 10px;
+    position: relative;
+    top: -557px;
+    left: 120px;
+    margin-top: 20px;
+}
+.manubar .manu-6 {
+    text-align: left;
+    padding: 10px;
+    position: relative;
+    top: -560px;
+    left: 120px;
+    margin-top: 20px;
+}
+.manubar {
+    float: left;
+}
+.ma {
+    width: 20px;
+    height: 70px;
+    background-color: rgb(0, 0, 0);
+    margin: 25px;
+    position: relative;
+    left: 50px ;
+    top: 60px;
+    clear: left;
+}
+.ma-1 {
+    width: 20px;
+    height: 70px;
+    background-color: rgb(255, 29, 29);
+    margin: 25px;
+    position: relative;
+    left: 50px ;
+    top: 60px;
+    clear: left;
+}
+.manu-7 {
+    width: 1.5px;
+    height: 1300px;
+    background-color: black;
+    position: relative;
+    left: 350px;
+    top: -520px;
+}

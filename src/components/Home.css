@@ -1,0 +1,119 @@
+h1 {
+  position: relative;
+  margin: 0; 
+  padding: 100px;
+  padding-right: 20px;
+  right: -80px;
+}
+
+.form-group {
+  text-align: left;
+  width: 400px;
+  float: right;
+  margin-bottom:30px ;
+  font-size: 18px;
+}
+
+.username {
+  position: relative;
+  top: -40px 
+}
+
+.password {
+  position: relative;
+  top: -80px;
+}
+
+.user {
+  position: relative;
+  width: 100% !important;
+  display: flex;
+  padding: 10px;
+  top: -50px;
+}
+.password-input-container-2 {  
+  position: relative;
+  display: flex;
+  top: -90px;
+}
+
+.form-group input {
+  width: 100% !important;
+  padding: 10px;
+  box-sizing: border-box;
+  padding-top: 15px;
+}
+
+.toggle-button {
+  position: relative;
+  left: 360px;
+  top: 50%;
+  transform: translateY(10%);
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.scg {
+  width: 60%; 
+  height: 80%;
+  float: left; 
+}
+
+.linee {
+  border-top: 1px solid #000000;
+  position: relative;
+  top: -30px;
+  width: 450px;
+  left: 820px;
+}
+
+body {
+  margin: 0;
+}
+
+.submitt {
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 25px;
+  background-color: rgb(253, 25, 25);
+  color: #ffffff;
+  width: 150px;
+  border: none;
+  position: relative !important;
+  top: -80px;
+  left: 50px;
+}
+
+.forgot-password{
+  background: none;
+  border: none;
+  color: red;
+  position: relative ;
+  top: -70px;
+  left: 47px;
+}
+
+.register {
+  padding: 10px 20px;
+  font-size: 14px;
+  cursor: pointer;
+  border-radius: 25px;
+  background-color: rgb(254, 208, 25);
+  color: #ffffff;
+  width: 200px;
+  border: none;
+  position: relative;
+  left: 42px;
+}
+
+.footnotee {
+  margin-top: 152px;
+  font-size: 16px;
+  background-color: black;
+  color: rgb(255, 255, 255);
+  width: 100%;
+  padding: 1px;
+
+}
