@@ -97,7 +97,7 @@ function Doc2() {
                     )}
                 </div >
                    <div className='button-4'>
-                        <div className='button-3'><button className='button-2' onClick={handleSubmit}>ยืนยัน</button></div>
+                        <div className='button-3'><button className='button-2' onClick={handleSubmit}>ยืนยันการส่ง</button></div>
                         <div className='back-button'><button className='back-button-1' onClick={handleBack}><img src="https://cdn-icons-png.flaticon.com/128/130/130882.png" alt="Back" /></button></div>
                    </div>
             </div>

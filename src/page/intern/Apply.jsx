@@ -503,17 +503,10 @@ function Apply() {
                     </div>
                 )}
                 <button onClick={goToConsiderPage} className='applyintern' type="submit">ยืนยันการสมัคร</button>
-                {/* {showConfirmation && (
-                    <div className="confirmation-popup">
-                    <p>คุณแน่ใจหรือไม่ว่าต้องการดำเนินการต่อ?</p>
-                    <button onClick={() => setShowConfirmation(false)}>ยกเลิก</button>
-                    <button onClick={handleSubmit}>ยืนยัน</button>
-                    </div>
-                )} */}
             </form>
             <div className='line-3'></div>
             <div className='line-2'></div>
-            <div className='footnote-3'>
+            <div className='footnotee'>
                 <p>ติดต่อสอบถาม New Way Of Work System</p>
                 <p>คุณสุพรรษา ม. supansak@scg.com</p>
                 <p>Digital Transformation Architect (Data Driven-TS)</p>

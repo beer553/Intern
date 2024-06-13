@@ -33,7 +33,7 @@ function Navbar() {
                 <div className='manu-3'><Link to="/consider"><h3>พิจารณาการสมัคร</h3></Link></div>
                 <div className='manu-4'><Link to="/interview"><h3>การสัมภาษณ์</h3></Link></div>
                 <div className='manu-5'><Link to="/doc"><h3>ส่งเอกสารเพิ่มเติม</h3></Link></div>
-                <div className='manu-6'><Link to="/interview"><h3>ยินดีต้อนรับ</h3></Link></div>
+                <div className='manu-6'><Link to="/doc3"><h3>ยินดีต้อนรับ</h3></Link></div>
             </div>
             <div className='manu-7'></div>
             </div>

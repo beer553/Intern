@@ -1,0 +1,138 @@
+.text-3 {
+    text-align: left;
+    margin-left: 50px
+}
+.p2 {
+    margin-left: 40px;
+}
+.p3 {
+    margin-left: 80px;
+}
+.input-group {
+    display: flex;
+    align-items: center;
+    gap: 10px; 
+    margin-left: 100PX;
+}
+  
+.input-group label {
+    width: 60px; 
+}
+  
+.input-group input {
+    width: 200px;
+    margin-left: 300;
+}
+.date-3 {
+    text-align: left;
+    margin-left: 250px;
+}
+.countdown-head h2 {
+    font-size: 60px;
+}
+.countdown-head h3 {
+    font-size: 40px;
+    color: rgb(75, 255, 30);
+}
+.countdown {
+    display: flex;
+    justify-content: center;
+    margin-left: 60px;
+}
+.time-section {
+    margin: 0 10px;
+    margin-right: 0px;
+    text-align: center;
+}
+.time {
+  color: red;
+  font-size: 6em;
+  padding-right: 80px;
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+.label-3 {
+  text-align: left;
+  margin-left: 15px;
+}
+.project {
+  height: 100px;
+  align-items: center;
+}
+.project-1 {
+  height: 100%;
+  width: 300px;
+  font-size: 2em;
+  border: none;
+  background-color:rgba(33, 252, 29, 0.833) ;
+  color: whitesmoke;
+  cursor: pointer;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+}
+.project-1:hover {
+  box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.2);
+  transform: translateY(-3px);
+}
+.message-container {
+  margin-top: 50px;
+}
+.diamond-container {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 50px;
+  width: 400px;
+  margin-left: 445px;
+}
+.diamond {
+  width: 25px;
+  height: 50px;
+  background-color: rgba(33, 252, 29, 0.833); 
+}
+.edit-icon {
+  width: 50px;
+  height: 50px;
+  cursor: pointer;
+}
+.edit-button {
+  background: none;
+  border: none;
+}
+.edit-button-container {
+  text-align: right;
+  display: flex;
+  margin-top: 50px;
+}
+.project-details {
+  display: flex;
+  text-align: center;
+  margin-left: 200px;
+  margin-top: 50px;
+}
+.description-1 {
+  text-align: center;
+  margin-right: 25px;
+}
+.details-1 {
+  text-align: left;
+  margin-top: 5px;
+  border: 2px solid black;
+  padding: 0 20px;
+  width: 600px;
+  height: 200px;
+}
+.project-image {
+  width: 100%; 
+  max-width: 150px; 
+  height: auto; 
+  margin: 10px 0;
+}
+.details-2 {
+  text-align: left;
+  margin-top: 5px;
+  border: 2px solid black;
+  padding: 0 20px;
+  width: 600px;
+  height: 200px;
+  margin-left: 60px;
+}

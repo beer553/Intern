@@ -1,15 +1,20 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import './App.css';
-import Home from './components/Home';
-import Login from './components/login';
-import Apply from './components/Apply';
-import Benefit from './components/benefit';
-import Consider from './components/consider';
-import Interview from './components/interview';
-import Doc from './components/Doc';
-import Doc2 from './components/Doc2';
-import Doc3 from './components/Doc3';
+import Home from './page/intern/Home';
+import Login from './page/intern/login';
+import Apply from './page/intern/Apply';
+import Benefit from './page/intern/benefit';
+import Consider from './page/intern/consider';
+import Interview from './page/intern/interview';
+import Doc from './page/intern/Doc';
+import Doc2 from './page/intern/Doc2';
+import Doc3 from './page/intern/Doc3';
+import Welcome from './page/intern/welcome';
+import Welcome2 from './page/intern/welcome2';
+import Welcome3 from './page/intern/welcome3';
+import Project from './page/mentor/project';
+import Assignproject from './page/mentor/assignproject'
 
 function App() {
   return (
@@ -25,6 +30,11 @@ function App() {
         <Route path="/doc" element={<Doc/>} /> 
         <Route path="/doc2" element={<Doc2/>} /> 
         <Route path="/doc3" element={<Doc3/>} /> 
+        <Route path="/welcome" element={<Welcome/>} /> 
+        <Route path="/welcome2" element={<Welcome2/>} /> 
+        <Route path="/welcome3" element={<Welcome3/>} /> 
+        <Route path="/project" element={<Project/>} /> 
+        <Route path="/assignproject" element={<Assignproject/>} /> 
       </Routes>
     </Router>
   </div>
