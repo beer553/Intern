@@ -60,8 +60,9 @@ h1 {
 
 .password-input-container-2 {
   position: relative;
-  display: flex;
-  top: -90px;
+  bottom: 90px;
+  box-sizing: border-box;
+  text-align: center;
 }
 .form-group input {
   width: 100% ;
@@ -71,13 +72,16 @@ h1 {
 }
 
 .toggle-button {
-  position: relative;
-  left: 360px;
-  top: 50%;
-  transform: translateY(10%);
+  position: absolute;
+  left: 350px;
+  transform: translateY(35%);
   background: none;
   border: none;
   cursor: pointer;
+}
+.toggle-button img {
+  width: 20px;
+  height: 20px;
 }
 
 .linee {

@@ -15,6 +15,8 @@ import Welcome2 from './page/intern/welcome2';
 import Welcome3 from './page/intern/welcome3';
 import Project from './page/mentor/project';
 import Assignproject from './page/mentor/assignproject'
+import Scrum from './page/mentor/srcum';
+import ScrumDiary from './page/mentor/scrumdiary';
 
 function App() {
   return (
@@ -35,6 +37,8 @@ function App() {
         <Route path="/welcome3" element={<Welcome3/>} /> 
         <Route path="/project" element={<Project/>} /> 
         <Route path="/assignproject" element={<Assignproject/>} /> 
+        <Route path="/scrum" element={<Scrum/>} /> 
+        <Route path="/scrumdiary" element={<ScrumDiary/>} /> 
       </Routes>
     </Router>
   </div>

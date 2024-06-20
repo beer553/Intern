@@ -28,7 +28,7 @@
 }
 
 .form-groupp input {
-  width: 50%;
+  width: 30%;
   padding: 10px;
   box-sizing: border-box;
   padding-top: 15px;
@@ -45,22 +45,21 @@
   text-align: center;
 }
 .password-input-container input {
-  width: 50%;
+  width: 30%;
   
 }
 
-.toggle-button {
+.toggle-button-1 {
   position: absolute;
-  right: 25px;
-  top: 50%;
-  transform: translateY(-50%);
+  transform: translateY(30%);
   background: none;
   border: none;
   cursor: pointer;
-  padding: 0;
+  width: 30px;
+  margin-left: -60px;
 }
 
-.toggle-button img {
+.toggle-button-1 img {
   width: 20px;
   height: 20px;
 }

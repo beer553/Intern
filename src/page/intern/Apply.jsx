@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import './Apply.css';
 import { useNavigate } from 'react-router-dom';
-import { BrowserRouter as Router } from 'react-router-dom';
+import Navbar from './navbar';
 
 function Apply() {
     const [title, setTitle] = useState('');
@@ -169,6 +169,7 @@ function Apply() {
     };
 
     return (
+        <>
         <div>
             <div className='head'>
                 <div className='back'>
@@ -189,7 +190,7 @@ function Apply() {
                 <div className='data'><h3>ข้อมูลส่วนตัว</h3></div>
             </div>
             <div className='aa'></div>
-            <div className='bb'><h3>กรอกข้อมูล <br/> รับสมัคร</h3></div>
+            <div className='bb'><h3>กรอกข้อมูลรับสมัคร</h3></div>
             <form className='from-group-2'onSubmit={handleSubmit}>
                 <div className='prefix-1'>
                     <div><p className='p1'>คำนำหน้าชื่อ</p></div>
@@ -514,6 +515,7 @@ function Apply() {
                 <p>©SCG 2024</p>
             </div>
         </div>
+    </>
     );
 }
 

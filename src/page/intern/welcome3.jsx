@@ -47,7 +47,7 @@ function Welcome3() {
             <div className="message-container">
                 <p className="message-project">{message}</p>
             </div>
-            <div className="diamond-container">
+            <div className="diamond-container-1">
                 <div className="diamond"></div>
                 <div className="diamond"></div>
                 <div className="diamond"></div>
@@ -80,7 +80,7 @@ function Welcome3() {
                 <p>คุณสุพรรษา ม. supansak@scg.com</p>
                 <p>Digital Transformation Architect (Data Driven-TS)</p>
                 <p>Created by Sunsa M and Pantakit S & Developed by Supanut K</p>
-                <p>©SCG 2024</p>
+                <p className='p-1'>©SCG 2024</p>
             </div>
         </div>
     );

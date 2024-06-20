@@ -73,7 +73,7 @@ function Login() {
               required 
               placeholder="Enter your password"
             />         
-            <button type="button" className='toggle-button' onClick={togglePasswordVisibility}>
+            <button type="button" className='toggle-button-1' onClick={togglePasswordVisibility}>
               <img 
                 src={showPassword ? "https://cdn-icons-png.flaticon.com/128/8395/8395688.png" : "https://cdn-icons-png.flaticon.com/128/7794/7794218.png"} 
                 alt={showPassword ? "Hide Password" : "Show Password"} 
@@ -91,7 +91,7 @@ function Login() {
               required 
               placeholder="Confirm your password"
             />
-            <button type="button" className='toggle-button' onClick={toggleConfirmPasswordVisibility}>
+            <button type="button" className='toggle-button-1' onClick={toggleConfirmPasswordVisibility}>
               <img 
                 src={showConfirmPassword ? "https://cdn-icons-png.flaticon.com/128/8395/8395688.png" : "https://cdn-icons-png.flaticon.com/128/7794/7794218.png"} 
                 alt={showConfirmPassword ? "Hide Password" : "Show Password"} 

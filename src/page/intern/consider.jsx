@@ -3,7 +3,7 @@ import './consider.css';
 import Navbar from './navbar';
 
 function Consider() {
-  const considerationStatus = "ยินดีด้วย";
+  const considerationStatus = "เสียใจด้วย";
   let CSSClass = '';
   let iconUrl = '';
   let additionalMessage = '';
