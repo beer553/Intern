@@ -13,15 +13,15 @@ const Scrum = () => {
 
   const renderIcon = (answer) => {
     if (answer) {
-      return <span>&#10004;</span>; // ไอคอนถูก
+      return <span style={{ color: 'rgb(118, 197, 0)' }}>&#10004;</span>; // ไอคอนถูก
     } else {
-      return <span>&#10006;</span>; // ไอคอนผิด
+      return <span style={{ color: 'red' }}>&#10006;</span>; // ไอคอนผิด
     }
   };
   const navigate = useNavigate();
 
   const data = [
-    { firstName: 'Phurin', lastName: 'Chairoek', id: '0001-123005', status: 'กำลังฝึกงาน', position: 'Fullstack', trainingPeriod: '01/01/2564 - 31/12/2564', AssignedProject: 'Intern', backlog: 'Project A' },
+    { firstName: 'Phurin', lastName: 'Chairoek', id: '0001-123005', status: 'กำลังฝึกงาน', position: 'Fullstack', trainingPeriod: '01/01/2024 - 31/12/2025', AssignedProject: 'Intern', backlog: 'Project A' },
   ];
   const [doing, setDoing] = useState('');
   const [done, setDone] = useState('');
@@ -38,6 +38,7 @@ const Scrum = () => {
   const [isToDoScored, setIsToDoScored] = useState(false);
 
   const [scrumData, setScrumData] = useState(null);
+  const [showPopup, setShowPopup] = useState(false);
 
   const handleBack = () => {
     navigate(-1); 
@@ -73,7 +74,15 @@ const Scrum = () => {
     };
     console.log(scrumData);
     setScrumData(scrumData);
+    setShowPopup(true);
+    
+    setTimeout(() => {
+      setShowPopup(false);
+    }, 1000);
   };
+    const closePopup = () => {
+      setShowPopup(false);
+    };
   
   const handleDoingScore = (score) => {
     setDoingScore(score);
@@ -156,7 +165,7 @@ const Scrum = () => {
                 <div>
                   <button className='badscrum'>
                     <img src="https://cdn-icons-png.flaticon.com/128/4252/4252037.png" style={{ width: '40px', height: '40px' }} />
-                    <p className='badscrum-1'>แย่</p>
+                    <p className='badscrum-1'>ฮาโรย !!!</p>
                   </button>
                 </div>
                 <div>
@@ -168,7 +177,7 @@ const Scrum = () => {
                 <div>
                   <button className='gladsrcum'>
                     <img src="https://cdn-icons-png.flaticon.com/128/7938/7938341.png" style={{ width: '40px', height: '40px' }} />
-                    <p className='gladsrcum-1'>ดีเยี่ยม</p>
+                    <p className='gladsrcum-1'>สุดยอด</p>
                   </button>
                 </div>
               </div>
@@ -181,7 +190,7 @@ const Scrum = () => {
                 <div>
                   <button className='badscrum'>
                     <img src="https://cdn-icons-png.flaticon.com/128/4252/4252037.png" style={{ width: '40px', height: '40px' }} />
-                    <p className='badscrum-1'>แย่</p>
+                    <p className='badscrum-1'>ฮาโรย !!!</p>
                   </button>
                 </div>
                 <div>
@@ -193,7 +202,7 @@ const Scrum = () => {
                 <div>
                   <button className='gladsrcum'>
                     <img src="https://cdn-icons-png.flaticon.com/128/7938/7938341.png" style={{ width: '40px', height: '40px' }} />
-                    <p className='gladsrcum-1'>ดีเยี่ยม</p>
+                    <p className='gladsrcum-1'>สุดยอด</p>
                   </button>
                 </div>
               </div>
@@ -205,7 +214,7 @@ const Scrum = () => {
                 <div>
                   <button className='badscrum'>
                     <img src="https://cdn-icons-png.flaticon.com/128/4252/4252037.png" style={{ width: '40px', height: '40px' }} />
-                    <p className='badscrum-1'>แย่</p>
+                    <p className='badscrum-1'>ฮาโรย !!!</p>
                   </button>
                 </div>
                 <div>
@@ -217,7 +226,7 @@ const Scrum = () => {
                 <div>
                   <button className='gladsrcum'>
                     <img src="https://cdn-icons-png.flaticon.com/128/7938/7938341.png" style={{ width: '40px', height: '40px' }} />
-                    <p className='gladsrcum-1'>ดีเยี่ยม</p>
+                    <p className='gladsrcum-1'>สุดยอด</p>
                   </button>
                 </div>
               </div>
@@ -239,7 +248,7 @@ const Scrum = () => {
                 <div>
                   <button className='badscrum'>
                     <img src="https://cdn-icons-png.flaticon.com/128/4252/4252037.png" style={{ width: '40px', height: '40px' }} />
-                    <p className='badscrum-1'>แย่</p>
+                    <p className='badscrum-1'>ฮาโรย !!!</p>
                   </button>
                 </div>
                 <div>
@@ -251,7 +260,7 @@ const Scrum = () => {
                 <div>
                   <button className='gladsrcum'>
                     <img src="https://cdn-icons-png.flaticon.com/128/7938/7938341.png" style={{ width: '40px', height: '40px' }} />
-                    <p className='gladsrcum-1'>ดีเยี่ยม</p>
+                    <p className='gladsrcum-1'>สุดยอด</p>
                   </button>
                 </div>
               </div>
@@ -265,19 +274,22 @@ const Scrum = () => {
                 <select disabled className='todoscrumtext'>
                   <option className='todoscrumtext' value="1">1. Dev Fronend 3 หน้า</option>
                 </select>
+                &nbsp;{renderIcon(targetdoing[2].answer)}
                 <select disabled className='todoscrumtext'>
                   <option className='todoscrumtext' value="1">2. ออกแบบหน้า Fronend</option>
                 </select>
+                &nbsp;{renderIcon(targetdoing[1].answer)}
                 <select disabled className='todoscrum'>
                   <option className='todoscrumtext' value="1">3. ส่งมอบงาน Fronend</option>
                 </select>
-                  <option className='donecrum-4' value="1">4. อื่นๆ</option>
+                &nbsp;{renderIcon(targetdoing[2].answer)}
+                <div className='donecrum-4' value="1">4. อื่นๆ</div>
               </div>
               <div className='todo-2'>
               <div>
-                <button className={`badscrum ${isDoingScored && doingScore === 'แย่' ? 'active' : ''}`} onClick={() => handleDoingScore('แย่')}>
+                <button className={`badscrum ${isDoingScored && doingScore === 'แย่' ? 'active' : ''}`} onClick={() => handleDoingScore('ฮาโรย !!!')}>
                   <img src="https://cdn-icons-png.flaticon.com/128/4252/4252037.png" style={{ width: '40px', height: '40px' }} />
-                  <p className='badscrum-1'>แย่</p>
+                  <p className='badscrum-1'>ฮาโรย !!!</p>
                 </button>
               </div>
               <div>
@@ -287,9 +299,9 @@ const Scrum = () => {
                 </button>
               </div>
               <div>
-                <button className={`gladsrcum ${isDoingScored && doingScore === 'ดีเยี่ยม' ? 'active' : ''}`} onClick={() => handleDoingScore('ดีเยี่ยม')}>
+                <button className={`gladsrcum ${isDoingScored && doingScore === 'ดีเยี่ยม' ? 'active' : ''}`} onClick={() => handleDoingScore('สุดยอด')}>
                   <img src="https://cdn-icons-png.flaticon.com/128/7938/7938341.png" style={{ width: '40px', height: '40px' }} />
-                  <p className='gladsrcum-1'>ดีเยี่ยม</p>
+                  <p className='gladsrcum-1'>สุดยอด</p>
                 </button>
               </div>
               </div>
@@ -300,13 +312,15 @@ const Scrum = () => {
                   <option className='donecrum-1' value="1" >1. ได้พี่เอกสุดหล่อสอนครับ</option>                
                   <option className='donecrum-2' value="1">2. ไม่มี Inspiration</option>
                   <option className='donecrum-3' value="1">3. โปรดระบุ</option>
-                  <option className='donecrum-3' value="1">4. อื่นๆ</option>
+                  <div className='donecrum-5' value="1">ไม่ได้ตามเป้าที่จะทำ Dropdown ในส่วนของกราฟให้เสร็จ ครับ ทำไปได้เเค่ 80% เพราะยังทำให้กราฟเชื่อมกับ dropdown วันที่ไม่ได้ครับ ผมจึงเเบ่งเวลาไปทำอีกส่วนครับ คือ dropdown ของการเลือก ส่วน แผนก เเละเจ้าของสัญญาครับ ผมก็ได้ทำเสร็จไปแล้วครับ เเต่การเชื่อมต่อ dropdown กับกราฟนี้อาจจะนานเเน่นอนครับ
+                   
+                  </div>
               </div>
               <div className='todo-2'>
               <div>
-                  <button className={`badscrum ${isDoneScored && doneScore === 'แย่' ? 'active' : ''}`} onClick={() => handleDoneScore('แย่')}>
+                  <button className={`badscrum ${isDoneScored && doneScore === 'แย่' ? 'active' : ''}`} onClick={() => handleDoneScore('ฮาโรย !!!')}>
                     <img src="https://cdn-icons-png.flaticon.com/128/4252/4252037.png" style={{ width: '40px', height: '40px' }} />
-                    <p className='badscrum-1'>แย่</p>
+                    <p className='badscrum-1'>ฮาโรย !!!</p>
                   </button>
                 </div>
                 <div>
@@ -316,9 +330,9 @@ const Scrum = () => {
                   </button>
                 </div>
                 <div>
-                  <button className={`gladsrcum ${isDoneScored && doneScore === 'ดีเยี่ยม' ? 'active' : ''}`} onClick={() => handleDoneScore('ดีเยี่ยม')}>
+                  <button className={`gladsrcum ${isDoneScored && doneScore === 'ดีเยี่ยม' ? 'active' : ''}`} onClick={() => handleDoneScore('สุดยอด')}>
                     <img src="https://cdn-icons-png.flaticon.com/128/7938/7938341.png" style={{ width: '40px', height: '40px' }} />
-                    <p className='gladsrcum-1'>ดีเยี่ยม</p>
+                    <p className='gladsrcum-1'>สุดยอด</p>
                   </button>
                 </div>
               </div>
@@ -332,9 +346,9 @@ const Scrum = () => {
               </div>
               <div className='doing-2'>
                 <div>
-                  <button className={`badscrum ${isNeedSupportScored && needSupportScore === 'แย่' ? 'active' : ''}`} onClick={() => handleNeedSupportScore('แย่')}>
+                  <button className={`badscrum ${isNeedSupportScored && needSupportScore === 'แย่' ? 'active' : ''}`} onClick={() => handleNeedSupportScore('ฮาโรย !!!')}>
                     <img src="https://cdn-icons-png.flaticon.com/128/4252/4252037.png" style={{ width: '40px', height: '40px' }} />
-                    <p className='badscrum-1'>แย่</p>
+                    <p className='badscrum-1'>ฮาโรย !!!</p>
                   </button>
                 </div>
                 <div>
@@ -344,9 +358,9 @@ const Scrum = () => {
                   </button>
                 </div>
                 <div>
-                  <button className={`gladsrcum ${isNeedSupportScored && needSupportScore === 'ดีเยี่ยม' ? 'active' : ''}`} onClick={() => handleNeedSupportScore('ดีเยี่ยม')}>
+                  <button className={`gladsrcum ${isNeedSupportScored && needSupportScore === 'ดีเยี่ยม' ? 'active' : ''}`} onClick={() => handleNeedSupportScore('สุดยอด')}>
                     <img src="https://cdn-icons-png.flaticon.com/128/7938/7938341.png" style={{ width: '40px', height: '40px' }} />
-                    <p className='gladsrcum-1'>ดีเยี่ยม</p>
+                    <p className='gladsrcum-1'>สุดยอด</p>
                   </button>
                 </div>
               </div>
@@ -367,9 +381,9 @@ const Scrum = () => {
               </div>
               <div className='todo-2'>
                 <div>
-                  <button className={`badscrum ${isToDoScored && toDoScore === 'แย่' ? 'active' : ''}`} onClick={() => handleToDoScore('แย่')}>
+                  <button className={`badscrum ${isToDoScored && toDoScore === 'แย่' ? 'active' : ''}`} onClick={() => handleToDoScore('ฮาโรย !!!')}>
                     <img src="https://cdn-icons-png.flaticon.com/128/4252/4252037.png" style={{ width: '40px', height: '40px' }} />
-                    <p className='badscrum-1'>แย่</p>
+                    <p className='badscrum-1'>ฮาโรย !!!</p>
                   </button>
                 </div>
                 <div>
@@ -379,9 +393,9 @@ const Scrum = () => {
                   </button>
                 </div>
                 <div>
-                  <button className={`gladsrcum ${isToDoScored && toDoScore === 'ดีเยี่ยม' ? 'active' : ''}`} onClick={() => handleToDoScore('ดีเยี่ยม')}>
+                  <button className={`gladsrcum ${isToDoScored && toDoScore === 'ดีเยี่ยม' ? 'active' : ''}`} onClick={() => handleToDoScore('สุดท้าย')}>
                     <img src="https://cdn-icons-png.flaticon.com/128/7938/7938341.png" style={{ width: '40px', height: '40px' }} />
-                    <p className='gladsrcum-1'>ดีเยี่ยม</p>
+                    <p className='gladsrcum-1'>สุดยอด</p>
                   </button>
                 </div>
               </div>
@@ -395,6 +409,14 @@ const Scrum = () => {
         <button className='savescrum-1'>
           <img className='savescrum-2' src="https://cdn-icons-png.flaticon.com/128/6276/6276686.png" alt="" />
         </button>
+        {showPopup && (
+          <div className="popup">
+            <div className="popup-inner">
+              <h2>บันทึกสำเร็จ!</h2>
+              
+            </div>
+          </div>
+        )}
       </div>
       <div className='footnote'>
         <p>ติดต่อสอบถาม New Way Of Work System</p>
