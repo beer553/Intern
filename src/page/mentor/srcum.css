@@ -64,6 +64,7 @@
     padding: 64px;
     background-color: rgb(216, 216, 216);
     border-radius: 5px;
+    box-shadow:  1px 1px 1px 1px #d2d2d2;
 }
 
 .doing-3{
@@ -151,16 +152,39 @@
     margin-top: 150px;
 }
 .datesrcum-1 {
-    margin-top: 120px;
+    margin-top: 110px;
 }
 .badscrum , .goodscrum ,.gladsrcum {
     border: none;
     background: none;
     display: flex;
+    width: 120px;
+    transition: background-color 0.3s, transform 0.3s, box-shadow 0.3s;
 }
 .badscrum , .goodscrum ,.gladsrcum img {
     cursor: pointer;
 }
+.badscrum:hover,
+.goodscrum:hover,
+.gladsrcum:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+.badscrum:hover {
+    background-color: #f5c6cb; 
+}
+.goodscrum:hover {
+    background-color: #c3e6cb;
+}
+
+.gladsrcum:hover {
+    background-color: #b8daff;
+}
+.active {
+    box-shadow:  1px 1px 1px 1px #d2d2d2;
+    height: 50px;
+    width: 120px;
+  }
 
 .badscrum-1 , .goodscrum-1 ,.gladsrcum-1 {
     margin-left: 10px;
@@ -168,6 +192,11 @@
 .badscrum {
     margin-left: 3px;
 }
+/* .activebad {
+    box-shadow:  2px 2px 2px 2px #f5c6cb;
+    height: 50px;
+    width: 120px;
+} */
 .mantorcomment {
     margin-top: 5px;
     margin-left: 3px;
@@ -251,11 +280,6 @@
     width: 60px;
     cursor: pointer;
 }
-.active {
-    box-shadow:  2px 2px 2px 2px pink;
-    height: 50px;
-    width: 100px;
-  }
   .badshowscrum {
     border-radius: 5px;
     border: 1px solid black;

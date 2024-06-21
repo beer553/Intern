@@ -287,7 +287,7 @@ const Scrum = () => {
               </div>
               <div className='todo-2'>
               <div>
-                <button className={`badscrum ${isDoingScored && doingScore === 'แย่' ? 'active' : ''}`} onClick={() => handleDoingScore('ฮาโรย !!!')}>
+                <button className={`badscrum ${isDoingScored && doingScore === 'ฮาโรย !!!' ? 'active' : ''}`} onClick={() => handleDoingScore('ฮาโรย !!!')}>
                   <img src="https://cdn-icons-png.flaticon.com/128/4252/4252037.png" style={{ width: '40px', height: '40px' }} />
                   <p className='badscrum-1'>ฮาโรย !!!</p>
                 </button>
@@ -299,7 +299,7 @@ const Scrum = () => {
                 </button>
               </div>
               <div>
-                <button className={`gladsrcum ${isDoingScored && doingScore === 'ดีเยี่ยม' ? 'active' : ''}`} onClick={() => handleDoingScore('สุดยอด')}>
+                <button className={`gladsrcum ${isDoingScored && doingScore === 'สุดยอด' ? 'active' : ''}`} onClick={() => handleDoingScore('สุดยอด')}>
                   <img src="https://cdn-icons-png.flaticon.com/128/7938/7938341.png" style={{ width: '40px', height: '40px' }} />
                   <p className='gladsrcum-1'>สุดยอด</p>
                 </button>
@@ -318,7 +318,7 @@ const Scrum = () => {
               </div>
               <div className='todo-2'>
               <div>
-                  <button className={`badscrum ${isDoneScored && doneScore === 'แย่' ? 'active' : ''}`} onClick={() => handleDoneScore('ฮาโรย !!!')}>
+                  <button className={`badscrum ${isDoneScored && doneScore === 'ฮาโรย !!!' ? 'active' : ''}`} onClick={() => handleDoneScore('ฮาโรย !!!')}>
                     <img src="https://cdn-icons-png.flaticon.com/128/4252/4252037.png" style={{ width: '40px', height: '40px' }} />
                     <p className='badscrum-1'>ฮาโรย !!!</p>
                   </button>
@@ -330,7 +330,7 @@ const Scrum = () => {
                   </button>
                 </div>
                 <div>
-                  <button className={`gladsrcum ${isDoneScored && doneScore === 'ดีเยี่ยม' ? 'active' : ''}`} onClick={() => handleDoneScore('สุดยอด')}>
+                  <button className={`gladsrcum ${isDoneScored && doneScore === 'สุดยอด' ? 'active' : ''}`} onClick={() => handleDoneScore('สุดยอด')}>
                     <img src="https://cdn-icons-png.flaticon.com/128/7938/7938341.png" style={{ width: '40px', height: '40px' }} />
                     <p className='gladsrcum-1'>สุดยอด</p>
                   </button>
@@ -346,7 +346,7 @@ const Scrum = () => {
               </div>
               <div className='doing-2'>
                 <div>
-                  <button className={`badscrum ${isNeedSupportScored && needSupportScore === 'แย่' ? 'active' : ''}`} onClick={() => handleNeedSupportScore('ฮาโรย !!!')}>
+                  <button className={`badscrum ${isNeedSupportScored && needSupportScore === 'ฮาโรย !!!' ? 'active' : ''}`} onClick={() => handleNeedSupportScore('ฮาโรย !!!')}>
                     <img src="https://cdn-icons-png.flaticon.com/128/4252/4252037.png" style={{ width: '40px', height: '40px' }} />
                     <p className='badscrum-1'>ฮาโรย !!!</p>
                   </button>
@@ -358,7 +358,7 @@ const Scrum = () => {
                   </button>
                 </div>
                 <div>
-                  <button className={`gladsrcum ${isNeedSupportScored && needSupportScore === 'ดีเยี่ยม' ? 'active' : ''}`} onClick={() => handleNeedSupportScore('สุดยอด')}>
+                  <button className={`gladsrcum ${isNeedSupportScored && needSupportScore === 'สุดยอด' ? 'active' : ''}`} onClick={() => handleNeedSupportScore('สุดยอด')}>
                     <img src="https://cdn-icons-png.flaticon.com/128/7938/7938341.png" style={{ width: '40px', height: '40px' }} />
                     <p className='gladsrcum-1'>สุดยอด</p>
                   </button>
@@ -381,7 +381,7 @@ const Scrum = () => {
               </div>
               <div className='todo-2'>
                 <div>
-                  <button className={`badscrum ${isToDoScored && toDoScore === 'แย่' ? 'active' : ''}`} onClick={() => handleToDoScore('ฮาโรย !!!')}>
+                  <button className={`badscrum ${isToDoScored && toDoScore === 'ฮาโรย !!!' ? 'active' : ''}`} onClick={() => handleToDoScore('ฮาโรย !!!')}>
                     <img src="https://cdn-icons-png.flaticon.com/128/4252/4252037.png" style={{ width: '40px', height: '40px' }} />
                     <p className='badscrum-1'>ฮาโรย !!!</p>
                   </button>
@@ -393,7 +393,7 @@ const Scrum = () => {
                   </button>
                 </div>
                 <div>
-                  <button className={`gladsrcum ${isToDoScored && toDoScore === 'ดีเยี่ยม' ? 'active' : ''}`} onClick={() => handleToDoScore('สุดท้าย')}>
+                  <button className={`gladsrcum ${isToDoScored && toDoScore === 'สุดยอด' ? 'active' : ''}`} onClick={() => handleToDoScore('สุดยอด')}>
                     <img src="https://cdn-icons-png.flaticon.com/128/7938/7938341.png" style={{ width: '40px', height: '40px' }} />
                     <p className='gladsrcum-1'>สุดยอด</p>
                   </button>
