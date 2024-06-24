@@ -170,16 +170,16 @@
   transform: translateY(-3px);
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
-.badscrum:hover {
+/* .badscrum:hover {
     background-color: #f5c6cb; 
-}
-.goodscrum:hover {
+} */
+/* .goodscrum:hover {
     background-color: #c3e6cb;
 }
 
 .gladsrcum:hover {
     background-color: #b8daff;
-}
+} */
 .active {
     box-shadow:  1px 1px 1px 1px #d2d2d2;
     height: 50px;
