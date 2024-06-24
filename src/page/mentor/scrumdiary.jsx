@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
-import './srcum.css'; 
-import Headmentor from './headmentor'; 
-import { useNavigate } from 'react-router-dom'; 
+import './srcum.css';
+import Headmentor from './headmentor';
+import { useNavigate } from 'react-router-dom';
 
 const ScrumDiary = ({ scrumData }) => {
   const navigate = useNavigate();
@@ -25,7 +25,7 @@ const ScrumDiary = ({ scrumData }) => {
   ];
 
   const handleBack = () => {
-    navigate(-1); 
+    navigate(-1);
   };
 
   const getPreviousDayDate = () => {
@@ -167,10 +167,10 @@ const ScrumDiary = ({ scrumData }) => {
               <div className='todo-3'>
                 <p className='mentorcomment-1'>Ok ค่ะ</p>
               </div>
-            </div>  
+            </div>
             <div className='todo'>
               <div className='todo-1'>
-                <option className='donecrum-1' value="1">1. ได้พี่เอกสุดหล่อสอนครับ</option>                
+                <option className='donecrum-1' value="1">1. ได้พี่เอกสุดหล่อสอนครับ</option>
                 <option className='donecrum-2' value="1">2. ไม่มี Inspiration</option>
                 <option className='donecrum-3' value="1">3. โปรดระบุ</option>
                 <div className='donecrum-5' value="1">4. อื่นๆ</div>
@@ -180,9 +180,9 @@ const ScrumDiary = ({ scrumData }) => {
                 <div className='badshowscrum'>ฮาโรย !!!</div>
               </div>
               <div className='todo-3'>
-              <p className='mentorcomment-1'>Ok ค่ะ</p>
+                <p className='mentorcomment-1'>Ok ค่ะ</p>
               </div>
-            </div>  
+            </div>
             <div className='doing'>
               <div className='needsupport'>
                 <h5 disabled className='needsupport-1'>
@@ -194,9 +194,9 @@ const ScrumDiary = ({ scrumData }) => {
                 <div className='goodshowscrum'>ดีมาก</div>
               </div>
               <div className='doing-3'>
-              <p className='mentorcomment-1'>Ok ค่ะ</p>
+                <p className='mentorcomment-1'>Ok ค่ะ</p>
               </div>
-            </div> 
+            </div>
             <div className='todo'>
               <div className='todo-1'>
                 <select disabled className='todoscrum'>
@@ -208,16 +208,16 @@ const ScrumDiary = ({ scrumData }) => {
                 <select disabled className='todoscrum'>
                   <option value="1"></option>
                 </select>
-                  <option className='todoscrumnone' value="1"></option>
+                <option className='todoscrumnone' value="1"></option>
               </div>
               <div className='doinshow'>
                 <img src="https://cdn-icons-png.flaticon.com/128/7938/7938341.png" style={{ width: '60px', height: '60px' }} alt="" />
                 <div className='verygoodshowscrum'>สุดยอด</div>
               </div>
               <div className='todo-3'>
-              <p className='mentorcomment-1'>Ok ค่ะ</p>
+                <p className='mentorcomment-1'>Ok ค่ะ</p>
               </div>
-            </div>  
+            </div>
           </div>
         </div>
       </div>

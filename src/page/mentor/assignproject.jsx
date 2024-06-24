@@ -14,11 +14,11 @@ function AssignProject() {
             const checkbox = document.getElementById(`profile-${profile.id}`);
             return checkbox && checkbox.checked;
         });
-    
+
         // ส่งข้อมูลที่ต้องการไปยังหน้า /project
         navigate('/project', { state: { ...location.state, selectedProfiles } });
     };
-    
+
     const handleBack = () => {
         navigate(-1);
     };
@@ -35,11 +35,11 @@ function AssignProject() {
         { id: 9, profileImage: 'https://scontent.furt1-1.fna.fbcdn.net/v/t39.30808-1/419770044_1424527298420555_3849569547122236407_n.jpg?stp=dst-jpg_s200x200&_nc_cat=109&ccb=1-7&_nc_sid=5f2048&_nc_eui2=AeH4oWIDszTud-zV5dBzNT0oKJd6mNPF1HIol3qY08XUcrG19G2_nlU44RzENYkTFWASPWJniSTfaz31gwpm2lO_&_nc_ohc=6g1w1iHXscUQ7kNvgEbW45U&_nc_ht=scontent.furt1-1.fna&oh=00_AYABakjKRaDoPkStPYGrTSkWFHbL9Y2_uq7PcDU0yrtZ_w&oe=66702D55', nickname: 'โพก้า', fullName: 'ดร.โพก้า', school: 'มหาวิทยาลัยมหิดล' },
         { id: 10, profileImage: 'https://scontent.furt1-1.fna.fbcdn.net/v/t39.30808-1/419770044_1424527298420555_3849569547122236407_n.jpg?stp=dst-jpg_s200x200&_nc_cat=109&ccb=1-7&_nc_sid=5f2048&_nc_eui2=AeH4oWIDszTud-zV5dBzNT0oKJd6mNPF1HIol3qY08XUcrG19G2_nlU44RzENYkTFWASPWJniSTfaz31gwpm2lO_&_nc_ohc=6g1w1iHXscUQ7kNvgEbW45U&_nc_ht=scontent.furt1-1.fna&oh=00_AYABakjKRaDoPkStPYGrTSkWFHbL9Y2_uq7PcDU0yrtZ_w&oe=66702D55', nickname: 'โพก้า', fullName: 'ดร.โพก้า', school: 'มหาวิทยาลัยมหิดล' },
         { id: 11, profileImage: 'https://scontent.furt1-1.fna.fbcdn.net/v/t39.30808-1/419770044_1424527298420555_3849569547122236407_n.jpg?stp=dst-jpg_s200x200&_nc_cat=109&ccb=1-7&_nc_sid=5f2048&_nc_eui2=AeH4oWIDszTud-zV5dBzNT0oKJd6mNPF1HIol3qY08XUcrG19G2_nlU44RzENYkTFWASPWJniSTfaz31gwpm2lO_&_nc_ohc=6g1w1iHXscUQ7kNvgEbW45U&_nc_ht=scontent.furt1-1.fna&oh=00_AYABakjKRaDoPkStPYGrTSkWFHbL9Y2_uq7PcDU0yrtZ_w&oe=66702D55', nickname: 'โพก้า', fullName: 'ดร.โพก้า', school: 'มหาวิทยาลัยมหิดล' },
-        
+
     ];
 
 
-    
+
 
     return (
         <>
@@ -71,8 +71,8 @@ function AssignProject() {
                                         name={`profile-${profile.id}`}
                                     />
                                 </div>
-                                    <p>ชื่อ - นามสกุล: {profile.fullName}</p>
-                                    <p>สถานศึกษา: {profile.school}</p>
+                                <p>ชื่อ - นามสกุล: {profile.fullName}</p>
+                                <p>สถานศึกษา: {profile.school}</p>
                             </div>
                         </div>
                     ))}
@@ -93,11 +93,11 @@ function AssignProject() {
                 </div> */}
             </div>
             <div className='footnote'>
-                    <p>ติดต่อสอบถาม New Way Of Work System</p>
-                    <p>คุณสุพรรษา ม. supansak@scg.com</p>
-                    <p>Digital Transformation Architect (Data Driven-TS)</p>
-                    <p>Created by Sunsa M and Pantakit S & Developed by Supanut K</p>
-                    <p className='p-1'>©SCG 2024</p>
+                <p>ติดต่อสอบถาม New Way Of Work System</p>
+                <p>คุณสุพรรษา ม. supansak@scg.com</p>
+                <p>Digital Transformation Architect (Data Driven-TS)</p>
+                <p>Created by Sunsa M and Pantakit S & Developed by Supanut K</p>
+                <p className='p-1'>©SCG 2024</p>
             </div>
         </>
     );

@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
-import './srcum.css'; 
-import Headmentor from './headmentor'; 
-import { useNavigate } from 'react-router-dom'; 
+import './srcum.css';
+import Headmentor from './headmentor';
+import { useNavigate } from 'react-router-dom';
 import ScrumDiary from './scrumdiary';
 
 const Scrum = () => {
@@ -41,7 +41,7 @@ const Scrum = () => {
   const [showPopup, setShowPopup] = useState(false);
 
   const handleBack = () => {
-    navigate(-1); 
+    navigate(-1);
   };
 
   const getPreviousDayDate = () => {
@@ -75,35 +75,35 @@ const Scrum = () => {
     console.log(scrumData);
     setScrumData(scrumData);
     setShowPopup(true);
-    
+
     setTimeout(() => {
       setShowPopup(false);
     }, 1000);
   };
-    const closePopup = () => {
-      setShowPopup(false);
-    };
-  
+  const closePopup = () => {
+    setShowPopup(false);
+  };
+
   const handleDoingScore = (score) => {
     setDoingScore(score);
     setIsDoingScored(true);
   };
-  
+
   const handleDoneScore = (score) => {
     setDoneScore(score);
     setIsDoneScored(true);
   };
-  
+
   const handleNeedSupportScore = (score) => {
     setNeedSupportScore(score);
     setIsNeedSupportScored(true);
   };
-  
+
   const handleToDoScore = (score) => {
     setToDoScore(score);
     setIsToDoScored(true);
   };
-  
+
 
   return (
     <>
@@ -286,38 +286,38 @@ const Scrum = () => {
                 <div className='donecrum-4' value="1">4. อื่นๆ</div>
               </div>
               <div className='todo-2'>
-              <div>
-                <button className={`badscrum ${isDoingScored && doingScore === 'ฮาโรย !!!' ? 'active' : ''}`} onClick={() => handleDoingScore('ฮาโรย !!!')}>
-                  <img src="https://cdn-icons-png.flaticon.com/128/4252/4252037.png" style={{ width: '40px', height: '40px' }} />
-                  <p className='badscrum-1'>ฮาโรย !!!</p>
-                </button>
-              </div>
-              <div>
-                <button className={`goodscrum ${isDoingScored && doingScore === 'ดีมาก' ? 'active' : ''}`} onClick={() => handleDoingScore('ดีมาก')}>
-                  <img src="https://cdn-icons-png.flaticon.com/128/2717/2717365.png" style={{ width: '40px', height: '40px' }} />
-                  <p className='goodscrum-1'>ดีมาก</p>
-                </button>
-              </div>
-              <div>
-                <button className={`gladsrcum ${isDoingScored && doingScore === 'สุดยอด' ? 'active' : ''}`} onClick={() => handleDoingScore('สุดยอด')}>
-                  <img src="https://cdn-icons-png.flaticon.com/128/7938/7938341.png" style={{ width: '40px', height: '40px' }} />
-                  <p className='gladsrcum-1'>สุดยอด</p>
-                </button>
-              </div>
+                <div>
+                  <button className={`badscrum ${isDoingScored && doingScore === 'ฮาโรย !!!' ? 'active' : ''}`} onClick={() => handleDoingScore('ฮาโรย !!!')}>
+                    <img src="https://cdn-icons-png.flaticon.com/128/4252/4252037.png" style={{ width: '40px', height: '40px' }} />
+                    <p className='badscrum-1'>ฮาโรย !!!</p>
+                  </button>
+                </div>
+                <div>
+                  <button className={`goodscrum ${isDoingScored && doingScore === 'ดีมาก' ? 'active' : ''}`} onClick={() => handleDoingScore('ดีมาก')}>
+                    <img src="https://cdn-icons-png.flaticon.com/128/2717/2717365.png" style={{ width: '40px', height: '40px' }} />
+                    <p className='goodscrum-1'>ดีมาก</p>
+                  </button>
+                </div>
+                <div>
+                  <button className={`gladsrcum ${isDoingScored && doingScore === 'สุดยอด' ? 'active' : ''}`} onClick={() => handleDoingScore('สุดยอด')}>
+                    <img src="https://cdn-icons-png.flaticon.com/128/7938/7938341.png" style={{ width: '40px', height: '40px' }} />
+                    <p className='gladsrcum-1'>สุดยอด</p>
+                  </button>
+                </div>
               </div>
               <textarea className='todo-3' value={doing} onChange={(e) => setDoing(e.target.value)}></textarea>
-            </div>  
+            </div>
             <div className='todo'>
               <div className='todo-1'>
-                  <option className='donecrum-1' value="1" >1. ได้พี่เอกสุดหล่อสอนครับ</option>                
-                  <option className='donecrum-2' value="1">2. ไม่มี Inspiration</option>
-                  <option className='donecrum-3' value="1">3. โปรดระบุ</option>
-                  <div className='donecrum-5' value="1">ไม่ได้ตามเป้าที่จะทำ Dropdown ในส่วนของกราฟให้เสร็จ ครับ ทำไปได้เเค่ 80% เพราะยังทำให้กราฟเชื่อมกับ dropdown วันที่ไม่ได้ครับ ผมจึงเเบ่งเวลาไปทำอีกส่วนครับ คือ dropdown ของการเลือก ส่วน แผนก เเละเจ้าของสัญญาครับ ผมก็ได้ทำเสร็จไปแล้วครับ เเต่การเชื่อมต่อ dropdown กับกราฟนี้อาจจะนานเเน่นอนครับ
-                   
-                  </div>
+                <option className='donecrum-1' value="1" >1. ได้พี่เอกสุดหล่อสอนครับ</option>
+                <option className='donecrum-2' value="1">2. ไม่มี Inspiration</option>
+                <option className='donecrum-3' value="1">3. โปรดระบุ</option>
+                <div className='donecrum-5' value="1">ไม่ได้ตามเป้าที่จะทำ Dropdown ในส่วนของกราฟให้เสร็จ ครับ ทำไปได้เเค่ 80% เพราะยังทำให้กราฟเชื่อมกับ dropdown วันที่ไม่ได้ครับ ผมจึงเเบ่งเวลาไปทำอีกส่วนครับ คือ dropdown ของการเลือก ส่วน แผนก เเละเจ้าของสัญญาครับ ผมก็ได้ทำเสร็จไปแล้วครับ เเต่การเชื่อมต่อ dropdown กับกราฟนี้อาจจะนานเเน่นอนครับ
+
+                </div>
               </div>
               <div className='todo-2'>
-              <div>
+                <div>
                   <button className={`badscrum ${isDoneScored && doneScore === 'ฮาโรย !!!' ? 'active' : ''}`} onClick={() => handleDoneScore('ฮาโรย !!!')}>
                     <img src="https://cdn-icons-png.flaticon.com/128/4252/4252037.png" style={{ width: '40px', height: '40px' }} />
                     <p className='badscrum-1'>ฮาโรย !!!</p>
@@ -337,10 +337,10 @@ const Scrum = () => {
                 </div>
               </div>
               <textarea className='todo-3' value={done} onChange={(e) => setDone(e.target.value)}></textarea>
-            </div>  
+            </div>
             <div className='doing'>
               <div className='needsupport'>
-              <h5 disabled className='needsupport-1'>
+                <h5 disabled className='needsupport-1'>
                   <option className='needsupport-2' value="1" > อยากให้พี่ดาวช่วยดูหน้าที่ Dev เสร็จแล้ว <br /></option>
                 </h5>
               </div>
@@ -365,7 +365,7 @@ const Scrum = () => {
                 </div>
               </div>
               <textarea className='doing-3' value={needSupport} onChange={(e) => setNeedSupport(e.target.value)}></textarea>
-            </div> 
+            </div>
             <div className='todo'>
               <div className='todo-1'>
                 <select disabled className='todoscrum'>
@@ -377,7 +377,7 @@ const Scrum = () => {
                 <select disabled className='todoscrum'>
                   <option value="1"></option>
                 </select>
-                  <option className='todoscrumnone' value="1"></option>
+                <option className='todoscrumnone' value="1"></option>
               </div>
               <div className='todo-2'>
                 <div>
@@ -400,7 +400,7 @@ const Scrum = () => {
                 </div>
               </div>
               <textarea className='todo-3' value={toDo} onChange={(e) => setToDo(e.target.value)}></textarea>
-            </div>  
+            </div>
           </div>
         </div>
       </div>
@@ -413,7 +413,7 @@ const Scrum = () => {
           <div className="popup">
             <div className="popup-inner">
               <h2>บันทึกสำเร็จ!</h2>
-              
+
             </div>
           </div>
         )}

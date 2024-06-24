@@ -34,7 +34,7 @@ function Project() {
 
         if (location.state && location.state.selectedProfiles) {
             setSelectedProfiles(location.state.selectedProfiles);
-        }else {
+        } else {
             setSelectedProfiles([]); // ถ้าไม่มี selectedProfiles ที่ส่งมากับ location.state ให้ตั้งค่าเป็น []
         }
 
@@ -55,7 +55,7 @@ function Project() {
 
     const handleEditProject = (projectId) => {
         const projectToEdit = projects.find(project => project.id === projectId);
-        
+
         setNewProject({
             startDate: projectToEdit.startDate,
             endDate: projectToEdit.endDate,
@@ -64,7 +64,7 @@ function Project() {
             status: projectToEdit.status,
             plan: projectToEdit.plan
         });
-        
+
         setEditProjectId(projectId);
         setShowForm(true);
     };
@@ -76,7 +76,7 @@ function Project() {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        
+
         if (editProjectId !== null) {
             const updatedProjects = projects.map(project => {
                 if (project.id === editProjectId) {
@@ -95,12 +95,12 @@ function Project() {
         } else {
             setProjects([...projects, { ...newProject, id: projects.length + 1, manager: loggedInUser }]);
         }
-        
+
         setNewProject({
             startDate: '',
             endDate: '',
             projectName: '',
-            manager: loggedInUser, 
+            manager: loggedInUser,
             status: '',
             plan: ''
         });
@@ -112,7 +112,7 @@ function Project() {
         const project = projects.find(project => project.id === projectId);
         navigate('/assignproject', { state: { project, selectedProfiles } });
     };
-    
+
     const formatDate = (dateString) => {
         const options = { day: '2-digit', month: '2-digit', year: 'numeric' };
         return new Date(dateString).toLocaleDateString('th-TH', options);
@@ -132,14 +132,14 @@ function Project() {
                         <button className='add-button-1' onClick={handleAddProject}>
                             <img className='add-button-2' src="https://cdn-icons-png.flaticon.com/128/4315/4315609.png" alt="" />
                         </button>
-                    </div>  
+                    </div>
                     <div className='add-button-text'>
                         <h3 className='add-button-text-1'>Add Project</h3>
                     </div>
                     <div className='projecttext'>
                         <h1 className='projecttext-1'>My Project</h1>
                     </div>
-                    
+
                 </div>
                 {showForm && (
                     <div className='form-container'>
@@ -163,14 +163,14 @@ function Project() {
                                 </label>
                                 <label>
                                     Status:
-                                    <select name="status" value={newProject.status} onChange={handleInputChange} className ='status-dropdown' required>
+                                    <select name="status" value={newProject.status} onChange={handleInputChange} className='status-dropdown' required>
                                         <option value="">โปรดเลือก</option>
                                         <option value="เริ่มต้น">เริ่มต้น</option>
                                         <option value="กำลังดำเนินการ">กำลังดำเนินการ</option>
                                         <option value="เสร็จสิ้น">เสร็จสิ้น</option>
                                         <option value="ยกเลิก">ยกเลิก</option>
                                     </select>
-                               </label>
+                                </label>
                                 <label>
                                     Action Plan:
                                     <input type="text" name="plan" value={newProject.plan} onChange={handleInputChange} required />
@@ -180,69 +180,69 @@ function Project() {
                         </form>
                     </div>
                 )}
-                    <div className='project-details-1'>
-                        {projects.length === 0 ? (
-                            <p className='no-projects-message'>ไม่มีโปรเจคในขณะนี้</p>
-                        ) : (
-                            <table className='project-table'>
-                                <thead>
-                                    <tr>
-                                        <th>No.</th>
-                                        <th>Edit</th>
-                                        <th>Start Date</th>
-                                        <th>End Date</th>
-                                        <th>Project Name</th>
-                                        <th>Scrum Master</th>
-                                        <th>Status</th>
-                                        <th>Action Plan</th>
-                                        <th>Team Develop</th>
+                <div className='project-details-1'>
+                    {projects.length === 0 ? (
+                        <p className='no-projects-message'>ไม่มีโปรเจคในขณะนี้</p>
+                    ) : (
+                        <table className='project-table'>
+                            <thead>
+                                <tr>
+                                    <th>No.</th>
+                                    <th>Edit</th>
+                                    <th>Start Date</th>
+                                    <th>End Date</th>
+                                    <th>Project Name</th>
+                                    <th>Scrum Master</th>
+                                    <th>Status</th>
+                                    <th>Action Plan</th>
+                                    <th>Team Develop</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {projects.map((project) => (
+                                    <tr key={project.id}>
+                                        <td>{project.id}</td>
+                                        <td>
+                                            <button onClick={() => handleEditProject(project.id)} className='edit-button'>
+                                                <img className='editproject' src="https://cdn-icons-png.flaticon.com/128/11471/11471622.png" alt="Edit" />
+                                            </button>
+                                        </td>
+                                        <td>{formatDate(project.startDate)}</td>
+                                        <td>{formatDate(project.endDate)}</td>
+                                        <td>{project.projectName}</td>
+                                        <td>{project.manager}</td>
+                                        <td style={{ color: project.status === 'เริ่มต้น' ? 'blue' : project.status === 'กำลังดำเนินการ' ? 'orange' : project.status === 'เสร็จสิ้น' ? 'green' : project.status === 'ยกเลิก' ? 'red' : 'inherit' }}>{project.status}</td>
+                                        <td>{project.plan}</td>
+                                        <td>
+                                            <button onClick={() => handleAssignProject(project.id)} className='assign-responsible-button'>
+                                                <img src="https://cdn-icons-png.flaticon.com/128/3135/3135715.png" alt="Assign" />
+                                                <ul className='choose-Intern-2'>
+                                                    {selectedProfiles.length > 0 && project.id === selectedProject?.id && (
+                                                        selectedProfiles.map(profile => (
+                                                            <li key={profile.id} className='choose-Intern-3'>
+                                                                {profile.nickname} - {profile.fullName}
+                                                            </li>
+                                                        ))
+                                                    )}
+                                                </ul>
+                                            </button>
+                                        </td>
                                     </tr>
-                                </thead>
-                                <tbody>
-                                    {projects.map((project) => (
-                                        <tr key={project.id}>
-                                            <td>{project.id}</td>
-                                            <td>
-                                                <button onClick={() => handleEditProject(project.id)} className='edit-button'>
-                                                    <img className='editproject' src="https://cdn-icons-png.flaticon.com/128/11471/11471622.png" alt="Edit" />
-                                                </button>
-                                            </td>
-                                            <td>{formatDate(project.startDate)}</td>
-                                            <td>{formatDate(project.endDate)}</td>
-                                            <td>{project.projectName}</td>
-                                            <td>{project.manager}</td>
-                                            <td style={{ color: project.status === 'เริ่มต้น' ? 'blue' : project.status === 'กำลังดำเนินการ' ? 'orange' : project.status === 'เสร็จสิ้น' ? 'green' : project.status === 'ยกเลิก' ? 'red' : 'inherit' }}>{project.status}</td>
-                                            <td>{project.plan}</td>
-                                            <td>
-                                                <button onClick={() => handleAssignProject(project.id)} className='assign-responsible-button'>
-                                                    <img src="https://cdn-icons-png.flaticon.com/128/3135/3135715.png" alt="Assign" />
-                                                    <ul className='choose-Intern-2'>
-                                                        {selectedProfiles.length > 0 && project.id === selectedProject?.id && (
-                                                            selectedProfiles.map(profile => (
-                                                                <li key={profile.id} className='choose-Intern-3'>
-                                                                    {profile.nickname} - {profile.fullName}
-                                                                </li>
-                                                            ))
-                                                        )}
-                                                    </ul>
-                                                </button>
-                                            </td>
-                                        </tr>
-                                    ))}
-                                </tbody>
-                            </table>
-                            )}
-                        </div>
+                                ))}
+                            </tbody>
+                        </table>
+                    )}
                 </div>
-                <div className='footnote'>
-                    <p>ติดต่อสอบถาม New Way Of Work System</p>
-                    <p>คุณสุพรรษา ม. supansak@scg.com</p>
-                    <p>Digital Transformation Architect (Data Driven-TS)</p>
-                    <p>Created by Sunsa M and Pantakit S & Developed by Supanut K</p>
-                    <p className='p-1'>©SCG 2024</p>
-                </div>
-            </>
-        );
-    }
+            </div>
+            <div className='footnote'>
+                <p>ติดต่อสอบถาม New Way Of Work System</p>
+                <p>คุณสุพรรษา ม. supansak@scg.com</p>
+                <p>Digital Transformation Architect (Data Driven-TS)</p>
+                <p>Created by Sunsa M and Pantakit S & Developed by Supanut K</p>
+                <p className='p-1'>©SCG 2024</p>
+            </div>
+        </>
+    );
+}
 export default Project;
-                                        
+

@@ -1,11 +1,13 @@
 .srcun-comtainer {
     position: relative;
 }
+
 .srcum-table {
     margin-top: 20px;
     width: 83%;
     margin-left: 120px;
 }
+
 .srcum-table-1 {
     width: 100%;
     border-collapse: collapse;
@@ -13,64 +15,74 @@
     border: 1px solid #b2b2b2;
     box-shadow: 2px 2px 5px 2px rgba(0, 0, 0, 0.1);
 }
-.srcum-table-1 th, .srcum-table-1 td {
+
+.srcum-table-1 th,
+.srcum-table-1 td {
     padding: 10px;
     padding-top: 15px;
     padding-bottom: 10px;
 }
+
 .srcum-table-1 td {
     padding-bottom: 20px;
 }
+
 .backlogclick {
     border: none;
     background: none;
     cursor: pointer;
 }
+
 .srcum-diary {
     width: 83%;
     margin-left: 120px;
     margin-top: 20px;
     align-items: center;
 }
+
 .srcum-head {
     width: 100%;
     display: grid;
     justify-content: center;
-    grid-template-columns: 0.5fr repeat(4,1fr);
+    grid-template-columns: 0.5fr repeat(4, 1fr);
     grid-template-rows: auto;
 }
+
 .srcum-detail {
     width: 100%;
     display: grid;
     justify-content: start;
-    grid-template-columns: 0.5fr repeat(4,1fr);
+    grid-template-columns: 0.5fr repeat(4, 1fr);
     grid-template-rows: auto;
     column-gap: 10px;
     row-gap: 20px;
     align-items: center;
     margin-top: 20px;
 }
+
 .doing {
     box-shadow: 0 0 10px rgb(255, 255, 255);
     display: grid;
-    grid-template-columns: repeat(2,1fr);
+    grid-template-columns: repeat(2, 1fr);
     grid-template-rows: auto;
     row-gap: 10px;
     justify-content: center;
 }
+
 .doing-1 {
-    background:none ;
+    background: none;
     grid-column: 1/4;
     padding: 64px;
     background-color: rgb(216, 216, 216);
     border-radius: 5px;
-    box-shadow:  1px 1px 1px 1px #d2d2d2;
+    box-shadow: 1px 1px 1px 1px #d2d2d2;
 }
 
-.doing-3{
+.doing-3 {
     border: 2px solid #A52A2A;
     border-radius: 5px;
 }
+
 /* .doing-4{
     border: 2px solid rgb(255, 0, 0);
     padding: 67px;
@@ -80,47 +92,52 @@
 .todo {
     box-shadow: 0 0 10px rgb(255, 255, 255);
     display: grid;
-    grid-template-columns: repeat(2,1fr);
+    grid-template-columns: repeat(2, 1fr);
     grid-template-rows: auto;
     row-gap: 10px;
     justify-content: center;
 }
+
 .todo-1 {
-    background:none ;
+    background: none;
     grid-column: 1/4;
     border: 2px solid rgb(179, 179, 179);
     border-radius: 5px;
     width: 100%;
     height: 252px;
 }
+
 .todo-1-1 {
-    background:none ;
+    background: none;
     grid-column: 1/4;
     background-color: rgb(216, 216, 216);
     border-radius: 5px;
     width: 100%;
 }
+
 .todo-3 {
     border: 2px solid #A52A2A;
     border-radius: 5px;
 }
+
 .todoscrum {
     width: 90%;
     padding: 1.5px;
     margin-top: 10px;
     margin-bottom: 10px;
     border-radius: 6px;
-    border: 1.9px solid rgb(179, 179, 179); 
+    border: 1.9px solid rgb(179, 179, 179);
     color: black;
     font-weight: bold;
 }
+
 .todoscrumtext {
     width: 90%;
     padding: 1.5px;
     margin-top: 10px;
     margin-bottom: 10px;
     border-radius: 6px;
-    border: 1.9px solid rgb(179, 179, 179); 
+    border: 1.9px solid rgb(179, 179, 179);
     color: black;
     font-weight: bold;
 }
@@ -131,45 +148,58 @@
     margin-top: 10px;
     margin-bottom: 10px;
     border-radius: 6px;
-    border: 1.9px solid rgb(255, 255, 255); 
+    border: 1.9px solid rgb(255, 255, 255);
 }
+
 .srcum-date {
     align-items: center;
     border: 2px solid rgb(179, 179, 179);
     height: 100%;
     border-radius: 5px;
 }
+
 .srcum-date-1 {
     align-items: center;
     background-color: rgb(216, 216, 216);
     height: 100%;
     border-radius: 5px;
 }
+
 .srcum-head p {
     margin-bottom: 0;
 }
+
 .datesrcum {
     margin-top: 150px;
 }
+
 .datesrcum-1 {
     margin-top: 110px;
 }
-.badscrum , .goodscrum ,.gladsrcum {
+
+.badscrum,
+.goodscrum,
+.gladsrcum {
     border: none;
     background: none;
     display: flex;
     width: 120px;
     transition: background-color 0.3s, transform 0.3s, box-shadow 0.3s;
 }
-.badscrum , .goodscrum ,.gladsrcum img {
+
+.badscrum,
+.goodscrum,
+.gladsrcum img {
     cursor: pointer;
 }
+
 .badscrum:hover,
 .goodscrum:hover,
 .gladsrcum:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transform: translateY(-3px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
+
 /* .badscrum:hover {
     background-color: #f5c6cb; 
 } */
@@ -181,17 +211,21 @@
     background-color: #b8daff;
 } */
 .active {
-    box-shadow:  1px 1px 1px 1px #d2d2d2;
+    box-shadow: 1px 1px 1px 1px #d2d2d2;
     height: 50px;
     width: 120px;
-  }
+}
 
-.badscrum-1 , .goodscrum-1 ,.gladsrcum-1 {
+.badscrum-1,
+.goodscrum-1,
+.gladsrcum-1 {
     margin-left: 10px;
 }
+
 .badscrum {
     margin-left: 3px;
 }
+
 /* .activebad {
     box-shadow:  2px 2px 2px 2px #f5c6cb;
     height: 50px;
@@ -204,11 +238,11 @@
     height: 90%;
     border: none;
 }
+
 .donecrum-1,
 .donecrum-2,
 .donecrum-3,
-.donecrum-5
- {
+.donecrum-5 {
     width: 90%;
     padding: 1px;
     margin-top: 13px;
@@ -218,8 +252,8 @@
     text-align: left;
     margin-left: 10px;
 }
-.donecrum-4
- {
+
+.donecrum-4 {
     width: 88%;
     height: 100px;
     padding: 1px;
@@ -230,28 +264,33 @@
     margin-left: 5px;
     overflow: auto;
 }
-.donecrum-5
- {
+
+.donecrum-5 {
     height: 100px;
     overflow: auto;
 }
+
 .donecrum-1 {
     color: rgb(118, 197, 0);
 }
+
 .donecrum-2 {
     color: red;
 }
+
 .donecrum-3 {
     color: rgb(0, 0, 0);
 }
-.needsupport{
-    background:none ;
+
+.needsupport {
+    background: none;
     grid-column: 1/4;
     border: 2px solid rgb(179, 179, 179);
     border-radius: 5px;
     width: 100%;
     height: 253px;
 }
+
 .needsupport-1 {
     width: 90%;
     padding: 4.0px;
@@ -261,6 +300,7 @@
     text-align: left;
     margin-left: 10px;
 }
+
 .savescrum {
     margin-left: 1160px;
     margin-top: 25px;
@@ -268,6 +308,7 @@
     flex-direction: column;
     justify-content: center;
 }
+
 .savescrum-1 {
     background: none;
     border: none;
@@ -275,12 +316,14 @@
     height: 40px;
     margin-left: 130px;
 }
+
 .savescrum-2 {
     height: 60px;
     width: 60px;
     cursor: pointer;
 }
-  .badshowscrum {
+
+.badshowscrum {
     border-radius: 5px;
     border: 1px solid black;
     color: brown;
@@ -288,8 +331,9 @@
     justify-content: center;
     margin-left: 12px;
     padding-bottom: 2px;
-  }
-  .goodshowscrum {
+}
+
+.goodshowscrum {
     border-radius: 5px;
     border: 1px solid black;
     color: rgb(18, 172, 214);
@@ -297,8 +341,9 @@
     justify-content: center;
     margin-left: 12px;
     padding-bottom: 2px;
-  }
-  .verygoodshowscrum {
+}
+
+.verygoodshowscrum {
     border-radius: 5px;
     border: 1px solid black;
     color: rgb(255, 38, 237);
@@ -306,8 +351,9 @@
     justify-content: center;
     margin-left: 12px;
     padding-bottom: 2px;
-  }
-  .nextprojectscrum {
+}
+
+.nextprojectscrum {
     text-align: right;
     align-items: center;
     display: flex;
@@ -315,16 +361,19 @@
     margin-right: 140px;
     margin-top: 40px;
     margin-bottom: 200px;
-  }
-  .nextprojectscrum-1 {
+}
+
+.nextprojectscrum-1 {
     margin-right: 15px;
-  }
-  .nextprojectscrumb-2 {
+}
+
+.nextprojectscrumb-2 {
     background: none;
     border: none;
     cursor: pointer;
-  }
-  .popup {
+}
+
+.popup {
     position: fixed;
     top: 0;
     left: 0;
@@ -334,22 +383,17 @@
     display: flex;
     justify-content: center;
     align-items: center;
-  }
-  
-  .popup-inner {
+}
+
+.popup-inner {
     background: white;
     padding: 20px;
     border-radius: 10px;
     text-align: center;
-  }
-.mentorcomment-1{
+}
+
+.mentorcomment-1 {
     margin: 5px 0 0 10px;
     text-align: left;
-    color:rgb(87, 87, 87) ;
-}  
-
-
-
-
-
-
+    color: rgb(87, 87, 87);
+}
