@@ -1,15 +1,55 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './Homepage.css';
 import { useNavigate } from 'react-router-dom';
 
 function HomePage() {
   const navigate = useNavigate();
+  const [loggedInUser, setLoggedInUser] = useState('สุพรรษา มูลศิริ');
+  const [manpowerData, setManpowerData] = useState([
+    { id: 'G001-12345', name: 'Panidnat Saeng', status: 'รอฝึกงาน', timeline: '01/01/2024 - 31/12/2024', project: 'OT Dashboard' },
+    { id: 'G001-12346', name: 'Panidnat Saeng', status: 'กำลังฝึกงาน', timeline: '01/01/2024 - 31/12/2024', project: 'Internship' },
+    { id: 'G001-12347', name: 'Panidnat Saeng', status: 'กำลังฝึกงาน', timeline: '01/01/2024 - 31/12/2024', project: 'OT Dashboard' },
+    { id: 'G001-12348', name: 'Panidnat Saeng', status: 'กำลังฝึกงาน', timeline: '01/01/2024 - 31/12/2024', project: 'Internship' },
+    { id: 'G001-12349', name: 'Panidnat Saeng', status: 'ฝึกงานเสร็จสิ้น', timeline: '01/01/2024 - 31/12/2024', project: 'OT Dashboard' },
+    { id: 'G001-12350', name: 'Panidnat Saeng', status: 'ฝึกงานเสร็จสิ้น', timeline: '01/01/2024 - 31/12/2024', project: 'OT Dashboard' },
+  ]);
+  const [isFormVisible, setIsFormVisible] = useState(false);
+  const [newManpower, setNewManpower] = useState({
+    id: '',
+    name: '',
+    status: '',
+    timeline: '',
+    project: ''
+  });
+  const [timelineOptions] = useState([
+    '01/01/2024 - 31/12/2024',
+    '01/07/2024 - 31/12/2024',
+    '01/01/2025 - 31/12/2025',
+  ]);
 
   const goToPofilePage = () => {
     navigate('/IDP');
   }
   const gotoProductBacklog = () => {
     navigate('/PDBacklog');
+  };
+
+  const handleInputChange = (e) => {
+    const { name, value } = e.target;
+    setNewManpower((prev) => ({
+      ...prev,
+      [name]: value
+    }));
+  };
+
+  const handleFormSubmit = (e) => {
+    e.preventDefault();
+    setManpowerData((prev) => [
+      ...prev,
+      newManpower
+    ]);
+    setNewManpower({ id: '', name: '', status: '', timeline: '', project: '' });
+    setIsFormVisible(false);
   };
 
   return (
@@ -28,7 +68,7 @@ function HomePage() {
           </div>
         </div>
         <div className="mentor">
-          <span>Mentor<br />Star</span>
+          <span>Scrum Master<br />{loggedInUser}</span>
           <img src="https://cdn-icons-png.flaticon.com/128/3135/3135715.png" alt="Mentor" className="mentor-img" />
         </div>
       </header>
@@ -95,7 +135,7 @@ function HomePage() {
         <div className="manpower">
           <div className='add-manpower'>
             <h3 className='manpower-center'>Manpower</h3>
-            <div><img src="https://cdn-icons-png.flaticon.com/128/4315/4315609.png" alt="Add" className='add-1' /></div>
+            <div><img src="https://cdn-icons-png.flaticon.com/128/4315/4315609.png" alt="Add" className='add-1' onClick={() => setIsFormVisible(true)} /></div>
           </div>
           <table>
             <thead>
@@ -103,7 +143,7 @@ function HomePage() {
                 <th>NO</th>
                 <th>ID Name</th>
                 <th>Status</th>
-                <th>Time Line</th>
+                <th>Timeline</th>
                 <th>Project</th>
                 <th>Profile</th>
                 <th>Sprint Review</th>
@@ -111,17 +151,10 @@ function HomePage() {
               </tr>
             </thead>
             <tbody>
-              {[
-                { id: 1, name: 'G001-12345 Panidnat Saeng ', status: 'รอฝึกงาน', timeline: '01/01/2024 - 31/12/2024', project: 'OT Dashboard' },
-                { id: 2, name: 'G001-12345 Panidnat Saeng ', status: 'กำลังฝึกงาน', timeline: '01/01/2024 - 31/12/2024', project: ' Internship' },
-                { id: 3, name: 'G001-12345 Panidnat Saeng ', status: 'กำลังฝึกงาน', timeline: '01/01/2024 - 31/12/2024', project: 'OT Dashboard' },
-                { id: 4, name: 'G001-12345 Panidnat Saeng ', status: 'กำลังฝึกงาน', timeline: '01/01/2024 - 31/12/2024', project: 'Internship' },
-                { id: 5, name: 'G001-12345 Panidnat Saeng ', status: 'ฝึกงานเสร็จสิ้น', timeline: '01/01/2024 - 31/12/2024', project: 'OT Dashboard' },
-                { id: 6, name: 'G001-12345 Panidnat Saeng ', status: 'ฝึกงานเสร็จสิ้น', timeline: '01/01/2024 - 31/12/2024', project: 'OT Dashboard' },
-              ].map((row, index) => (
+              {manpowerData.map((row, index) => (
                 <tr key={index}>
-                  <td>{row.id}</td>
-                  <td>{row.name}</td>
+                  <td>{index + 1}</td>
+                  <td>{`${row.id} ${row.name}`}</td>
                   <td className={row.status.toLowerCase()}>{row.status}</td>
                   <td>{row.timeline}</td>
                   <td>{row.project}</td>
@@ -134,6 +167,36 @@ function HomePage() {
           </table>
         </div>
       </div>
+
+      {isFormVisible && (
+        <div className="form-overlay">
+          <div className="form-container">
+            <h2>Add New Manpower</h2>
+            <form onSubmit={handleFormSubmit}>
+              <label>
+                ID:
+                <input type="text" name="id" value={newManpower.id} onChange={handleInputChange} required />
+              </label>
+              <label>
+                Name:
+                <input type="text" name="name" value={newManpower.name} onChange={handleInputChange} required />
+              </label>
+              <label>
+                Timeline:
+                <select name="timeline" value={newManpower.timeline} onChange={handleInputChange} required>
+                  <option value="">Select Timeline</option>
+                  {timelineOptions.map((option, index) => (
+                    <option key={index} value={option}>{option}</option>
+                  ))}
+                </select>
+              </label>
+              <button type="submit">Add</button>
+              <button type="button" onClick={() => setIsFormVisible(false)}>Cancel</button>
+            </form>
+          </div>
+        </div>
+      )}
+
       <footer className="footer-3">
         <p>ติดต่อสอบถาม DX Manpower Managemant</p>
         <p>คุณสุพรรษา ม. supansak@scg.com</p>

@@ -277,12 +277,12 @@
  }
 
  .label-1- {
-   margin-left: 10px;
+   margin-left: -110px;
    margin-top: -20px;
  }
 
  .label-2- {
-   margin-left: 10px;
+   margin-left: -125px;
    margin-top: -20px;
  }
 
@@ -309,8 +309,8 @@
    box-shadow: 0 1px 5px rgba(0, 0, 0, 0.2);
    gap: 10px;
    width: 100px;
-   margin-left: 110px;
-   margin-top: -125px;
+   margin-left: -130px;
+   margin-top: -150px;
    cursor: pointer;
  }
 
@@ -323,8 +323,8 @@
    box-shadow: 0 1px 5px rgba(0, 0, 0, 0.2);
    gap: 10px;
    width: 100px;
-   margin-left: 110px;
-   margin-top: 5px;
+   margin-left: -130px;
+   margin-top: -5px;
    cursor: pointer;
  }
 
@@ -334,21 +334,21 @@
  }
 
  .pj-1- {
-   margin-top: 15px;
-   margin-left: 10px;
+   margin-top: -5px;
+   margin-left: -95px;
  }
 
  .number6 {
    font-size: 100px;
    font-weight: bold;
-   margin-left: 110px;
+   margin-left: 0px;
    margin-top: 30px;
  }
 
  .number3-1 {
    font-size: 100px;
    font-weight: bold;
-   margin-left: 120px;
+   margin-left: 0px;
    margin-top: 30px;
  }
 
@@ -361,7 +361,7 @@
  .number2 {
    font-size: 100px;
    font-weight: bold;
-   margin-left: 30px;
+   margin-left: -180px;
    margin-top: 30px;
  }
 
@@ -409,7 +409,7 @@
  }
 
  .PI {
-   margin-left: 10px;
+   margin-left: -85px;
    margin-top: 19px;
  }
 
