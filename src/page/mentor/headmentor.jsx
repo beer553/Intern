@@ -4,34 +4,30 @@ import { useNavigate } from 'react-router-dom';
 
 function Headmentor() {
     const navigate = useNavigate();
-    // const [showMenu, setShowMenu] = useState(false);
+    const gotoHomepage = () => {
+        navigate('/Homepage');
+      }
     const [loggedInUser, setLoggedInUser] = useState('สุพรรษา มูลศิริ');
 
-    // const toggleMenu = () => {
-    //     setShowMenu(!showMenu);
-    // };
-
     return (
-        <div className='menu-logo-container'>
-            {/* <button onClick={toggleMenu} className="menu-button"></button> */}
-            <img className='logo-4' src="https://www.builk.com/th/wp-content/uploads/2019/05/scg-logo-n.jpg" alt="" />
-            <input type="text" className="search-input" placeholder="Search..." />
-            <div className="user-info">
-                <img src="https://cdn-icons-png.flaticon.com/128/6048/6048462.png" alt="User Image" className="user-image" />
-                <div>
-                    <div className='Scrum-Master'><h4 className='Scrum-Master-1'>Scrum Master</h4></div>
-                    <span className="username-2">{loggedInUser}</span>
-                </div>
+        <header className="header">
+          <div className="header-left">
+            <div className="hamburger-menu">
+              <img src="https://cdn-icons-png.flaticon.com/128/2976/2976215.png" alt="Menu" />
             </div>
-            {/* <nav className={`menu ${showMenu ? 'show' : ''}`}>
-                <ul>
-                    <li>Menu Item 1</li>
-                    <li>Menu Item 2</li>
-                    <li>Menu Item 3</li>
-                </ul>
-            </nav> */}
-        </div>
-
+            <img className='scg' src="/src/img/Siam_Cement_Group_Logo.svg.png" alt="SCG  Logo" onClick={gotoHomepage}/>
+          </div>
+          <div className="header-center">
+            <div className="search-container">
+              <img src="https://cdn-icons-png.flaticon.com/128/751/751463.png" className="search-icon" />
+              <input className='search-' type="text" placeholder="Search" />
+            </div>
+          </div>
+          <div className="mentor">
+            <span>Scrum Master<br />{loggedInUser}</span>
+            <img src="https://cdn-icons-png.flaticon.com/128/6048/6048462.png" alt="Mentor" className="mentor-img" />
+          </div>
+        </header>
     );
 }
 

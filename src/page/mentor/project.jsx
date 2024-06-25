@@ -139,7 +139,6 @@ function Project() {
                     <div className='projecttext'>
                         <h1 className='projecttext-1'>My Project</h1>
                     </div>
-
                 </div>
                 {showForm && (
                     <div className='form-container'>

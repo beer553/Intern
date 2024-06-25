@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import './BLProject.css';
 import { useNavigate } from 'react-router-dom';
+import Headmentor from './headmentor';
 
 const ProductBacklog = () => {
   const navigate = useNavigate();
@@ -91,21 +92,9 @@ const ProductBacklog = () => {
   };
 
   return (
+    <>
+    <Headmentor />
     <div className="product-backlog">
-      <header className="header">
-        <div className="header-left">
-          <div className="hamburger-menu">
-            <img src="https://img.icons8.com/ios-filled/50/000000/menu--v1.png" alt="Menubar" />
-          </div>
-          <img className='scg' src="https://www.watsadupedia.com/images/2/2c/Scg.png" alt="SCG Logo." onClick={Home} />
-        </div>
-        <div className="header-center">
-        </div>
-        <div className="mentor">
-          <span>Mentor<br />Star</span>
-          <img src="https://cdn-icons-png.flaticon.com/128/3135/3135715.png" alt="Mentor" className="mentor-img" />
-        </div>
-      </header>
       <main>
         <div className='h1-1'>ProductBacklog</div>
         <div className='h2-1'>น้องเจ,น้องณเดช,น้องไนท์</div>
@@ -195,7 +184,7 @@ const ProductBacklog = () => {
           {newRow ? (
             <button onClick={saveRow} className='save-button'>ยืนยัน</button>
           ) : (
-            <img src="https://cdn-icons-png.flaticon.com/128/4315/4315609.png" alt="Add" className='add-button' onClick={addRow} />
+            <img src="https://cdn-icons-png.flaticon.com/128/4315/4315609.png" alt="Add" className='add-buttonz' onClick={addRow} />
           )}
         </section>
       </main>
@@ -207,6 +196,7 @@ const ProductBacklog = () => {
         <p>©SCG 2024</p>
       </footer>
     </div>
+    </>
   );
 };
 
