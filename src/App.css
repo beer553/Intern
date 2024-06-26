@@ -4,17 +4,18 @@
 }
 
 .html,body {
-  font-family: 'TH Chakra Petch Bold', sans-serif;
+  font-family: 'THSarabun', sans-serif;
   margin: 0 0 0 0;
+  font-size: 25px;
 }
 body {
-  font-family: 'TH Chakra Petch Bold', sans-serif;
+  font-family: 'THSarabun', sans-serif;
 }
 
 
 @font-face {
   font-family: 'THSarabun';
-  src: url('./fonts/TH Chakra Petch Bold.ttf') format('truetype');
+  src: url('./font/THChakraPetchBold.ttf') format('truetype');
 }
 
 

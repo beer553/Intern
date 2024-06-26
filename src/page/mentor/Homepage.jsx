@@ -169,7 +169,7 @@ function HomePage() {
                     className="input-field"
                   />
                 </label>
-                <labeln>
+                <label>
                   Name:
                   <input
                     type="text"
@@ -179,7 +179,7 @@ function HomePage() {
                     required
                     className="input-field"
                   />
-                </labeln>
+                </label>
               </div>
               <div className="form-row">
                 <label className='staratdate-3'>
