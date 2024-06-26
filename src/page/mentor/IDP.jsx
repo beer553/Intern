@@ -80,35 +80,33 @@ const Profile = () => {
             </div>
             <div className="form-right">
               <div className="form-goal">
-                <div>
                   <label className='target'>โปรดกรอกเป้าหมาย</label>
-                </div>
-                <textarea placeholder="โปรดระบุ" className='please-1'></textarea>
+                <div className='please-1'></div>
               </div>
               <div className="form-checkboxes">
                 <label>โปรดเลือกงานสายงานที่ถนัด</label>
                 <div className='label-check'>
-                  <div>
+                  <div className='choosejob'>
                     <input type="checkbox" id="frontend" name="frontend" />
                     <label htmlFor="frontend">Frontend</label>
                   </div>
-                  <div>
+                  <div className='choosejob'>
                     <input type="checkbox" id="data-analysis" name="data-analysis" />
                     <label htmlFor="data-analysis">Data Analysis</label>
                   </div>
-                  <div>
+                  <div className='choosejob'>
                     <input type="checkbox" id="backend" name="backend" />
                     <label htmlFor="backend">Backend</label>
                   </div>
-                  <div>
+                  <div className='choosejob'>
                     <input type="checkbox" id="full-stack" name="full-stack" />
                     <label htmlFor="full-stack">Full Stack</label>
                   </div>
-                  <div>
+                  <div className='choosejob'>
                     <input type="checkbox" id="data-management" name="data-management" />
                     <label htmlFor="data-management">Data Management</label>
                   </div>
-                  <div>
+                  <div className='choosejob'>
                     <input type="checkbox" id="other" name="other" />
                     <label htmlFor="other">อื่นๆ</label>
                   </div>
@@ -117,31 +115,31 @@ const Profile = () => {
               <div className="form-checkboxes">
                 <label>โปรแกรมหรืองานที่ถนัด (3 อย่างที่ถนัดที่สุด)</label>
                 <div className='label-check-2'>
-                  <div>
+                  <div className='choosejob'>
                     <input type="checkbox" id="figma" name="figma" />
                     <label htmlFor="figma">Figma</label>
                   </div>
-                  <div>
+                  <div className='choosejob'>
                     <input type="checkbox" id="vs-code" name="vs-code" />
                     <label htmlFor="vs-code">VS Code</label>
                   </div>
-                  <div>
+                  <div className='choosejob'>
                     <input type="checkbox" id="react" name="react" />
                     <label htmlFor="react">React</label>
                   </div>
-                  <div>
+                  <div className='choosejob'>
                     <input type="checkbox" id="sql-server" name="sql-server" />
                     <label htmlFor="sql-server">SQL Server</label>
                   </div>
-                  <div>
+                  <div className='choosejob'>
                     <input type="checkbox" id="php" name="php" />
                     <label htmlFor="php">PHP</label>
                   </div>
-                  <div>
+                  <div className='choosejob'>
                     <input type="checkbox" id="docker" name="docker" />
                     <label htmlFor="docker">Docker</label>
                   </div>
-                  <div>
+                  <div className='choosejob'>
                     <input type="checkbox" id="other-tool" name="other-tool" />
                     <label htmlFor="other-tool">อื่นๆ</label>
                   </div>
@@ -151,7 +149,7 @@ const Profile = () => {
           </div>
         </main>
       </div>
-      <footer className="footer-4">
+      <footer className="footer-3">
         <p>ติดต่อสอบถาม DX Manpower Managemant</p>
         <p>คุณสุพรรษา ม. supansak@scg.com</p>
         <p>Digital Transformation Architect (Data Driven-TS)</p>

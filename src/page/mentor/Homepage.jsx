@@ -154,43 +154,61 @@ function HomePage() {
             <div><img src="https://cdn-icons-png.flaticon.com/128/4315/4315609.png" alt="Add" className='add-1' onClick={() => setIsFormVisible(true)} /></div>
           </div>
           {isFormVisible && (
-            <div className="form-overlay">
-              <div className="form-container-manpower">
-                <form onSubmit={handleFormSubmit} className='manpowerfrom'>
-                  <div>
-                    <label>
-                      ID:
-                      <input type="text" name="id" value={newManpower.id} onChange={handleInputChange} required />
-                    </label>
-                    <label>
-                      Name:
-                      <input type="text" name="name" value={newManpower.name} onChange={handleInputChange} required />
-                    </label>
-                    <label>
-                      Start Date:
-                      <DatePicker
-                        selected={newManpower.startDate}
-                        onChange={handleStartDateChange}
-                        dateFormat="dd-MM-yyyy"
-                        className="date-picker"
-                      />
-                    </label>
-                    <label>
-                      End Date:
-                      <DatePicker
-                        selected={newManpower.endDate}
-                        onChange={handleEndDateChange}
-                        dateFormat="dd-MM-yyyy"
-                        className="date-picker"
-                      />
-                    </label>
-                  </div>
-                  <button className='addmanpowerbutton' type="submit">Add</button>
-                  <button className='cancelmanpowerbutton' type="button" onClick={() => setIsFormVisible(false)}>Cancel</button>
-                </form>
+        <div className="form-overlay">
+          <div className="form-container-manpower">
+            <form onSubmit={handleFormSubmit} className="manpower-form">
+              <div className="form-row-1">
+                <label className='id-3'>
+                  ID:
+                  <input
+                    type="text"
+                    name="id"
+                    value={newManpower.id}
+                    onChange={handleInputChange}
+                    required
+                    className="input-field"
+                  />
+                </label>
+                <labeln>
+                  Name:
+                  <input
+                    type="text"
+                    name="name"
+                    value={newManpower.name}
+                    onChange={handleInputChange}
+                    required
+                    className="input-field"
+                  />
+                </labeln>
               </div>
-            </div>
-          )}
+              <div className="form-row">
+                <label className='staratdate-3'>
+                  Start Date:
+                  <DatePicker
+                    selected={newManpower.startDate}
+                    onChange={handleStartDateChange}
+                    dateFormat="dd-MM-yyyy"
+                    className="input-field date-picker"
+                  />
+                </label>
+                <label>
+                  End Date:
+                  <DatePicker
+                    selected={newManpower.endDate}
+                    onChange={handleEndDateChange}
+                    dateFormat="dd-MM-yyyy"
+                    className="input-field date-picker"
+                  />
+                </label>
+              </div>
+              <div className="form-rowbutton">
+                <button type="submit" className="addmanpowerbutton">Add</button>
+                <button type="button" onClick={() => setIsFormVisible(false)} className="cancelmanpowerbutton">Cancel</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      )}
           <div className='manpower-table-1'>
             <table className='manpower-table'>
               <thead>

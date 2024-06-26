@@ -1,13 +1,20 @@
 
 .logo {
   height: 8em;
-  
 }
 
 .html,body {
-  font-family: 'Chakra', Bold;
- 
+  font-family: 'TH Chakra Petch Bold', sans-serif;
+  margin: 0 0 0 0;
+}
+body {
+  font-family: 'TH Chakra Petch Bold', sans-serif;
 }
 
+
+@font-face {
+  font-family: 'THSarabun';
+  src: url('./fonts/TH Chakra Petch Bold.ttf') format('truetype');
+}
 
 
