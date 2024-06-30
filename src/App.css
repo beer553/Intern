@@ -1,13 +1,14 @@
-
 .logo {
   height: 8em;
 }
 
-.html,body {
+.html,
+body {
   font-family: 'THSarabun', sans-serif;
   margin: 0 0 0 0;
   font-size: 25px;
 }
+
 body {
   font-family: 'THSarabun', sans-serif;
 }
@@ -17,5 +18,3 @@ body {
   font-family: 'THSarabun';
   src: url('./font/THChakraPetchBold.ttf') format('truetype');
 }
-
-
