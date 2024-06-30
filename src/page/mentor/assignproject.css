@@ -21,7 +21,9 @@
     margin-left: 0px;
     color: #555555;
 }
-
+.assignpro h1 {
+    padding: 0 0 0 0;
+}
 .back-button-2 {
     background: none;
     border: none;
@@ -51,7 +53,7 @@
 .profile-container {
     display: flex;
     margin-bottom: 20px;
-    background-color: hsl(0, 0%, 100%);
+    background-color: #ffffff;
     border: 1px solid hsla(0, 0%, 100%, 0.732);
     box-shadow: 4px 4px 5px rgba(0, 0, 0, 0.1);
     padding: 20px;
@@ -76,15 +78,7 @@
 }
 
 .nickname-profile {
-    background-color: rgb(255, 154, 71);
-    color: rgb(255, 255, 255);
-    height: 20px;
-    width: 100px;
-    padding: 10px;
-    text-align: center;
-    border-radius: 5px;
-    border: 1px solid rgb(255, 154, 71);
-    box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.1);
+font-size: 35px;
 }
 
 input[type="checkbox"] {
@@ -132,5 +126,7 @@ label[for="check"] {
     position: sticky;
 } */
 .confimeintren {
-    margin-top: 50px;
+    text-align: right;
+    margin-top: 30px;
+    margin-right: 180px;
 }

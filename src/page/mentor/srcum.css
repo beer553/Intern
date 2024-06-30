@@ -103,6 +103,7 @@
     border-radius: 5px;
     width: 100%;
     height: 252px;
+    font-size: 20px;
 }
 
 .todo-1-1 {
@@ -244,7 +245,7 @@
     width: 90%;
     padding: 1px;
     margin-top: 13px;
-    margin-bottom: 17px;
+    margin-bottom: 0px;
     border-radius: 6px;
     border: 1.5px solid rgb(179, 179, 179);
     text-align: left;
@@ -300,22 +301,22 @@
 }
 
 .savescrum {
-    margin-left: 1160px;
     margin-top: 25px;
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     justify-content: center;
+    align-items: center;
+    justify-content: end;
+    margin-right: 140px;
 }
-
+.savescrum h3 {
+    margin: 0 0 0 0;
+}
 .savescrum-1 {
     background: none;
     border: none;
     width: 100px;
     height: 40px;
-    margin-left: 130px;
-}
-
-.savescrum-2 {
     height: 60px;
     width: 60px;
     cursor: pointer;

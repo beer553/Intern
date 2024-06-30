@@ -7,12 +7,14 @@ function Project() {
     const navigate = useNavigate();
     const location = useLocation();
     const selectedProject = location.state ? location.state.project : null;
-    const [showMenu, setShowMenu] = useState(false);
     const [projects, setProjects] = useState([]);
+    const [searchResults, setSearchResults] = useState([]);
     const [showForm, setShowForm] = useState(false);
     const [loggedInUser, setLoggedInUser] = useState('สุพรรษา มูลศิริ');
     const [editProjectId, setEditProjectId] = useState(null);
     const [selectedProfiles, setSelectedProfiles] = useState([]);
+    const [statusFilter, setStatusFilter] = useState('');
+    const [showStatusDropdown, setShowStatusDropdown] = useState(false);
 
     const [newProject, setNewProject] = useState({
         startDate: '',
@@ -25,25 +27,22 @@ function Project() {
 
     useEffect(() => {
         const initialProjects = [
-            { id: 1, startDate: '2024-01-01', endDate: '2024-06-01', projectName: 'Alpha', manager: 'สุพรรษา มูลศิริ', status: 'เริ่มต้น', plan: 'Plan A' },
-            { id: 2, startDate: '2024-02-01', endDate: '2024-07-01', projectName: 'Beta', manager: 'สุพรรษา มูลศิริ', status: 'กำลังดำเนินการ', plan: 'Plan B' },
-            { id: 3, startDate: '2024-03-01', endDate: '2024-08-01', projectName: 'Gamma', manager: 'สุพรรษา มูลศิริ', status: 'เสร็จสิ้น', plan: 'Plan C' },
-            { id: 4, startDate: '2024-04-01', endDate: '2024-09-01', projectName: 'Delta', manager: 'สุพรรษา มูลศิริ', status: 'ยกเลิก', plan: 'Plan D' },
-            { id: 5, startDate: '2024-05-01', endDate: '2024-10-01', projectName: 'Intern', manager: 'สุพรรษา มูลศิริ', status: 'เริ่มต้น', plan: 'Plan E' }
+            { id: 1, startDate: '2024-01-01', endDate: '2024-06-01', projectName: 'Alpha', manager: 'สุพรรษา มูลศิริ', status: 'เริ่มต้น' },
+            { id: 2, startDate: '2024-02-01', endDate: '2024-07-01', projectName: 'Beta', manager: 'สุพรรษา มูลศิริ', status: 'กำลังดำเนินการ' },
+            { id: 3, startDate: '2024-03-01', endDate: '2024-08-01', projectName: 'Gamma', manager: 'สุพรรษา มูลศิริ', status: 'เสร็จสิ้น' },
+            { id: 4, startDate: '2024-04-01', endDate: '2024-09-01', projectName: 'Delta', manager: 'สุพรรษา มูลศิริ', status: 'ยกเลิก' },
+            { id: 5, startDate: '2024-05-01', endDate: '2024-10-01', projectName: 'Intern', manager: 'สุพรรษา มูลศิริ', status: 'เริ่มต้น' }
         ];
 
         if (location.state && location.state.selectedProfiles) {
             setSelectedProfiles(location.state.selectedProfiles);
         } else {
-            setSelectedProfiles([]); // ถ้าไม่มี selectedProfiles ที่ส่งมากับ location.state ให้ตั้งค่าเป็น []
+            setSelectedProfiles([]);
         }
 
         setProjects(initialProjects);
-    }, []);
-
-    const toggleMenu = () => {
-        setShowMenu(!showMenu);
-    };
+        setSearchResults(initialProjects);
+    }, [location.state]);
 
     const handleBack = () => {
         navigate(-1);
@@ -62,7 +61,6 @@ function Project() {
             projectName: projectToEdit.projectName,
             manager: projectToEdit.manager,
             status: projectToEdit.status,
-            plan: projectToEdit.plan
         });
 
         setEditProjectId(projectId);
@@ -86,14 +84,17 @@ function Project() {
                         endDate: newProject.endDate,
                         projectName: newProject.projectName,
                         status: newProject.status,
-                        plan: newProject.plan
                     };
                 }
                 return project;
             });
             setProjects(updatedProjects);
+            setSearchResults(updatedProjects);
         } else {
-            setProjects([...projects, { ...newProject, id: projects.length + 1, manager: loggedInUser }]);
+            const newProj = { ...newProject, id: projects.length + 1, manager: loggedInUser };
+            const updatedProjects = [...projects, newProj];
+            setProjects(updatedProjects);
+            setSearchResults(updatedProjects);
         }
 
         setNewProject({
@@ -102,7 +103,6 @@ function Project() {
             projectName: '',
             manager: loggedInUser,
             status: '',
-            plan: ''
         });
         setEditProjectId(null);
         setShowForm(false);
@@ -118,9 +118,20 @@ function Project() {
         return new Date(dateString).toLocaleDateString('th-TH', options);
     };
 
+    const handleStatusFilterChange = (status) => {
+        setStatusFilter(status);
+        setShowStatusDropdown(false);
+        if (status === '') {
+            setSearchResults(projects);
+        } else {
+            const filteredProjects = projects.filter(project => project.status === status);
+            setSearchResults(filteredProjects);
+        }
+    };
+
     return (
         <>
-            <Headmentor />
+            <Headmentor projects={projects} onSearchResults={setSearchResults} />
             <div className="project-container">
                 <div className='back-button'>
                     <button className='back-button-1' onClick={handleBack}>
@@ -130,7 +141,7 @@ function Project() {
                 <div className='projectadd'>
                     <div className='add-button'>
                         <button className='add-button-1' onClick={handleAddProject}>
-                            <img className='add-button-2' src="https://cdn-icons-png.flaticon.com/128/4315/4315609.png" alt="" />
+                            <img className='add-button-2' src="https://cdn-icons-png.flaticon.com/128/4315/4315609.png" alt="Add" />
                         </button>
                     </div>
                     <div className='add-button-text'>
@@ -157,7 +168,7 @@ function Project() {
                                     <input type="text" name="projectName" value={newProject.projectName} onChange={handleInputChange} required />
                                 </label>
                                 <label>
-                                    Srcum Master:
+                                    Scrum Master:
                                     <input type="text" name="manager" value={newProject.manager} onChange={handleInputChange} disabled />
                                 </label>
                                 <label>
@@ -170,17 +181,13 @@ function Project() {
                                         <option value="ยกเลิก">ยกเลิก</option>
                                     </select>
                                 </label>
-                                <label>
-                                    Action Plan:
-                                    <input type="text" name="plan" value={newProject.plan} onChange={handleInputChange} required />
-                                </label>
                             </div>
-                            <button type="submit" className='form-submit-button'> {editProjectId !== null ? 'Save Changes' : 'Add Project'}</button>
+                            <button type="submit" className='form-submit-button'>{editProjectId !== null ? 'Save Changes' : 'Add Project'}</button>
                         </form>
                     </div>
                 )}
                 <div className='project-details-1'>
-                    {projects.length === 0 ? (
+                    {searchResults.length === 0 ? (
                         <p className='no-projects-message'>ไม่มีโปรเจคในขณะนี้</p>
                     ) : (
                         <table className='project-table'>
@@ -192,13 +199,26 @@ function Project() {
                                     <th>End Date</th>
                                     <th>Project Name</th>
                                     <th>Scrum Master</th>
-                                    <th>Status</th>
-                                    <th>Action Plan</th>
+                                    <th className='status-header' onClick={() => setShowStatusDropdown(!showStatusDropdown)}>
+                                        <div className='dropdown-button'>
+                                            Status
+                                            <img src="https://cdn-icons-png.flaticon.com/128/130/130882.png" alt="Dropdown Icon" className={`dropdown-icon ${showStatusDropdown ? 'open' : 'close'}`} />
+                                        </div>
+                                        {showStatusDropdown && (
+                                            <div className='status-dropdown'>
+                                                <button onClick={() => handleStatusFilterChange('')}>All</button>
+                                                <button onClick={() => handleStatusFilterChange('เริ่มต้น')}>เริ่มต้น</button>
+                                                <button onClick={() => handleStatusFilterChange('กำลังดำเนินการ')}>กำลังดำเนินการ</button>
+                                                <button onClick={() => handleStatusFilterChange('เสร็จสิ้น')}>เสร็จสิ้น</button>
+                                                <button onClick={() => handleStatusFilterChange('ยกเลิก')}>ยกเลิก</button>
+                                            </div>
+                                        )}
+                                    </th>
                                     <th>Team Develop</th>
                                 </tr>
                             </thead>
                             <tbody>
-                                {projects.map((project) => (
+                                {searchResults.map((project) => (
                                     <tr key={project.id}>
                                         <td>{project.id}</td>
                                         <td>
@@ -210,8 +230,16 @@ function Project() {
                                         <td>{formatDate(project.endDate)}</td>
                                         <td>{project.projectName}</td>
                                         <td>{project.manager}</td>
-                                        <td style={{ color: project.status === 'เริ่มต้น' ? 'blue' : project.status === 'กำลังดำเนินการ' ? 'orange' : project.status === 'เสร็จสิ้น' ? 'green' : project.status === 'ยกเลิก' ? 'red' : 'inherit' }}>{project.status}</td>
-                                        <td>{project.plan}</td>
+                                        <td
+                                            style={{
+                                                color: project.status === 'เริ่มต้น' ? 'blue' :
+                                                       project.status === 'กำลังดำเนินการ' ? 'orange' :
+                                                       project.status === 'เสร็จสิ้น' ? 'green' :
+                                                       project.status === 'ยกเลิก' ? 'red' : 'inherit'
+                                            }}
+                                        >
+                                            {project.status}
+                                        </td>
                                         <td>
                                             <button onClick={() => handleAssignProject(project.id)} className='assign-responsible-button'>
                                                 <img src="https://cdn-icons-png.flaticon.com/128/3135/3135715.png" alt="Assign" />
@@ -243,5 +271,5 @@ function Project() {
         </>
     );
 }
-export default Project;
 
+export default Project;

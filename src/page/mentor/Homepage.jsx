@@ -3,23 +3,25 @@ import './Homepage.css';
 import { useNavigate } from 'react-router-dom';
 import DatePicker from 'react-datepicker';
 import 'react-datepicker/dist/react-datepicker.css';
-import Headmentor from './headmentor';
+import Headmentor1 from './headassignpro';
 
 function HomePage() {
   const navigate = useNavigate();
   const [loggedInUser] = useState('สุพรรษา มูลศิริ');
   const [manpowerData, setManpowerData] = useState([
-    { id: '001-12345', name: 'Panidnat Saeng', status: 'รอฝึกงาน', startDate: '2024-01-01', endDate: '2024-12-31', project: 'OT Dashboard' },
-    { id: '001-12346', name: 'Panidnat Saeng', status: 'กำลังฝึกงาน', startDate: '2024-01-01', endDate: '2024-12-31', project: 'Internship' },
-    { id: '001-12347', name: 'Panidnat Saeng', status: 'กำลังฝึกงาน', startDate: '2024-01-01', endDate: '2024-12-31', project: 'OT Dashboard' },
-    { id: '001-12348', name: 'Panidnat Saeng', status: 'กำลังฝึกงาน', startDate: '2024-01-01', endDate: '2024-12-31', project: 'Internship' },
-    { id: '001-12349', name: 'Panidnat Saeng', status: 'ฝึกงานเสร็จสิ้น', startDate: '2024-01-01', endDate: '2024-12-31', project: 'OT Dashboard' },
-    { id: '001-12350', name: 'Panidnat Saeng', status: 'ฝึกงานเสร็จสิ้น', startDate: '2024-01-01', endDate: '2024-12-31', project: 'OT Dashboard' },
+    { id: '001-12345', name: 'Panidnat Saeng', nickname: 'Sun', status: 'รอฝึกงาน', startDate: '2024-01-01', endDate: '2024-12-31', project: 'OT Dashboard' },
+    { id: '001-12346', name: 'Nattapon Intarak', nickname: 'Nat', status: 'กำลังฝึกงาน', startDate: '2024-01-01', endDate: '2024-12-31', project: 'Internship' },
+    { id: '001-12347', name: 'Saeng Ploenchit', nickname: 'Saeng', status: 'กำลังฝึกงาน', startDate: '2024-01-01', endDate: '2024-12-31', project: 'OT Dashboard' },
+    { id: '001-12348', name: 'Patchara Srisuwan', nickname: 'PS', status: 'กำลังฝึกงาน', startDate: '2024-01-01', endDate: '2024-12-31', project: 'Internship' },
+    { id: '001-12349', name: 'Panny Intharachit', nickname: 'Panny', status: 'ฝึกงานเสร็จสิ้น', startDate: '2024-01-01', endDate: '2024-12-31', project: 'OT Dashboard' },
+    { id: '001-12350', name: 'Natty Pattharawong', nickname: 'Natty', status: 'ฝึกงานเสร็จสิ้น', startDate: '2024-01-01', endDate: '2024-12-31', project: 'OT Dashboard' },
   ]);
+  const [searchResults, setSearchResults] = useState([]);
   const [isFormVisible, setIsFormVisible] = useState(false);
   const [newManpower, setNewManpower] = useState({
     id: '',
     name: '',
+    nickname: '',
     status: '',
     startDate: new Date(),
     endDate: new Date(),
@@ -70,8 +72,10 @@ function HomePage() {
 
   const handleFormSubmit = (e) => {
     e.preventDefault();
+    const newId = `001-${String(manpowerData.length + 12345).padStart(5, '0')}`;
     const newManpowerWithDefaults = {
       ...newManpower,
+      id: newId,
       status: 'รอฝึกงาน',
       project: 'ยังไม่มอบหมายโปรเจค'
     };
@@ -79,13 +83,19 @@ function HomePage() {
       ...prev,
       newManpowerWithDefaults
     ]);
-    setNewManpower({ id: '', name: '', status: '', startDate: new Date(), endDate: new Date(), project: '' });
+    setNewManpower({ id: '', name: '', nickname: '', status: '', startDate: new Date(), endDate: new Date(), project: '' });
     setIsFormVisible(false);
   };
 
+  const handleSearchResults = (results) => {
+    setSearchResults(results);
+  };
+
+  const displayedManpower = searchResults.length > 0 ? searchResults : manpowerData;
+
   return (
     <>
-      <Headmentor />
+      <Headmentor1 profiles={manpowerData} onSearchResults={handleSearchResults} />
       <div className="dashboard">
         <div className="welcome">
           <img src="\src\img\447852194_1172009427274611_5710036352369826661_n.png" className="profile-img" alt="Profile" />
@@ -97,7 +107,7 @@ function HomePage() {
         <div className="dashboard-1">
           <div className="card">
             <div className='developteamcard'>
-              <div className="number6">6</div>
+              <div className="number6">10</div>
               <img src="https://cdn-icons-png.flaticon.com/128/1478/1478951.png" className='Team' />
             </div>
             <div className="devterm">Developer Team (TTL)</div>
@@ -105,7 +115,7 @@ function HomePage() {
           </div>
           <div className="card">
             <div className='developthisyear'>
-              <div className="number3-1">3</div>
+              <div className="number3-1">6</div>
               <img src="https://cdn-icons-png.flaticon.com/128/1320/1320909.png" className='Team-1' />
             </div>
             <div className="label-2-">Developer This Year</div>
@@ -114,20 +124,18 @@ function HomePage() {
           <div className="card-2">
             <div className="project-card">
               <div className="number2">
-                <span>2</span>
+                <div >5</div>
               </div>
-              <div className="project-details">
+              <div className="project-homepage">
                 <div className="project-item" onClick={gotoProjectpage}>
-                  <img src="https://cdn-icons-png.flaticon.com/128/5956/5956592.png" alt="Project" className='PJZ' />
-                  <span>Project</span>
+                  <>Project</>
                 </div>
                 <div className="project-item-1-" onClick={gotoDairyscrumpage}>
-                  <img src="https://cdn-icons-png.flaticon.com/128/15189/15189145.png" alt="Scrum" className='Sc-1' />
                   <span>Daily Scrum</span>
                 </div>
               </div>
-              <div className='pj-1-'><span>Project This Year (Items)</span></div>
             </div>
+              <div className='pj-1-'><span>Project This Year (Items)</span></div>
             <div className="cyan-line"></div>
           </div>
           <div className="card-1">
@@ -141,7 +149,7 @@ function HomePage() {
                 <div className="icon-1" >
                   <img src="https://cdn-icons-png.flaticon.com/128/5084/5084624.png" alt="Product Backlog Icon" className='BLZ' />
                 </div>
-                <div>Product Backlog</div>
+                Product Backlog
               </div>
             </div>
             <div className="PI">Product Increment (Items)</div>
@@ -180,6 +188,17 @@ function HomePage() {
                     className="input-field"
                   />
                 </label>
+                <label>
+                  Nick Name:
+                  <input
+                    type="text"
+                    name="nickname"
+                    value={newManpower.nickname}
+                    onChange={handleInputChange}
+                    required
+                    className="input-field"
+                  />
+                </label>
               </div>
               <div className="form-row">
                 <label className='staratdate-3'>
@@ -213,7 +232,7 @@ function HomePage() {
             <table className='manpower-table'>
               <thead>
                 <tr>
-                  <th>NO</th>
+                  <th>No.</th>
                   <th>ID Name</th>
                   <th>Status</th>
                   <th>Timeline</th>
@@ -224,18 +243,24 @@ function HomePage() {
                 </tr>
               </thead>
               <tbody>
-                {manpowerData.map((row, index) => (
-                  <tr key={index}>
-                    <td>{index + 1}</td>
-                    <td>{`${row.id} ${row.name}`}</td>
-                    <td className={row.status.toLowerCase()}>{row.status}</td>
-                    <td>{`${new Date(row.startDate).toLocaleDateString()} - ${new Date(row.endDate).toLocaleDateString()}`}</td>
-                    <td>{row.project}</td>
-                    <td> <img className='file' src="https://cdn-icons-png.flaticon.com/128/1157/1157026.png" alt="Profile" onClick={goToPofilePage} /></td>
-                    <td><img className='sprint' src="https://cdn-icons-png.flaticon.com/128/4727/4727519.png" alt="Sprint Review" onClick={gotoscrumpage} /></td>
-                    <td><img className='Eva' src="https://cdn-icons-png.flaticon.com/128/334/334345.png" alt="Evaluate" /></td>
+                {displayedManpower.length > 0 ? (
+                  displayedManpower.map((row, index) => (
+                    <tr key={index}>
+                      <td>{index + 1}</td>
+                      <td className="align-left">{`${row.id} ${row.name} (${row.nickname})`}</td>
+                      <td className={row.status.toLowerCase()}>{row.status}</td>
+                      <td>{`${new Date(row.startDate).toLocaleDateString()} - ${new Date(row.endDate).toLocaleDateString()}`}</td>
+                      <td>{row.project}</td>
+                      <td> <img className='file' src="https://cdn-icons-png.flaticon.com/128/1157/1157026.png" alt="Profile" onClick={goToPofilePage} /></td>
+                      <td><img className='sprint' src="https://cdn-icons-png.flaticon.com/128/4727/4727519.png" alt="Sprint Review" onClick={gotoscrumpage} /></td>
+                      <td><img className='Eva' src="https://cdn-icons-png.flaticon.com/128/334/334345.png" alt="Evaluate" /></td>
+                    </tr>
+                  ))
+                ) : (
+                  <tr>
+                    <td colSpan="8">ไม่มีชื่อนี้</td>
                   </tr>
-                ))}
+                )}
               </tbody>
             </table>
           </div>
@@ -245,7 +270,7 @@ function HomePage() {
         <p>ติดต่อสอบถาม DX Manpower Managemant</p>
         <p>คุณสุพรรษา ม. supansak@scg.com</p>
         <p>Digital Transformation Architect (Data Driven-TS)</p>
-        <p>Created by Sunsa M and Pantakit S & Developed by Phurin C</p>
+        <p>Created by Supansa M and Pantakit S & Developed by Phurin C</p>
         <p>©SCG 2024</p>
       </div>
     </>

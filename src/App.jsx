@@ -19,8 +19,8 @@ import Scrum from './page/mentor/srcum';
 import ScrumDiary from './page/mentor/scrumdiary';
 import Homepage from './page/mentor/Homepage';
 import IDP from './page/mentor/IDP';
-import PDBacklog from './page/mentor/PDBacklog'
-import BLProject from './page/mentor/BLProject'
+import PDBacklog from './page/mentor/PDBacklog';
+import BLProject from './page/mentor/BLProject';
 
 function App() {
   return (

@@ -21,7 +21,7 @@ const ScrumDiary = ({ scrumData }) => {
   };
 
   const intern = [
-    { firstName: 'Phurin', lastName: 'Chairoek', id: '0001-123005', status: 'กำลังฝึกงาน', position: 'Fullstack', trainingPeriod: '01/01/2024 - 31/12/2025', AssignedProject: 'Intern', backlog: 'Project A' },
+    { firstName: 'Phurin', lastName: 'Chairoek', id: '0001-123005', nickname: 'Sun', status: 'กำลังฝึกงาน', position: 'Fullstack', trainingPeriod: '01/01/2024 - 31/12/2025', AssignedProject: 'Intern', backlog: 'Project A' },
   ];
 
   const handleBack = () => {
@@ -44,6 +44,9 @@ const ScrumDiary = ({ scrumData }) => {
     month: 'short',
     year: 'numeric'
   });
+  const gotoProductBacklog = () => {
+    navigate('/BLProject');
+  };
 
   return (
     <>
@@ -61,6 +64,7 @@ const ScrumDiary = ({ scrumData }) => {
               <tr>
                 <th>No.</th>
                 <th>ID Name Lastname</th>
+                <th>Nickname</th>
                 <th>Status</th>
                 <th>Position</th>
                 <th>Training Time</th>
@@ -73,12 +77,13 @@ const ScrumDiary = ({ scrumData }) => {
                 <tr key={index}>
                   <td>{index + 1}</td>
                   <td>{`${item.id} ${item.firstName} ${item.lastName}`}</td>
+                  <td>{item.nickname}</td>
                   <td>{item.status}</td>
                   <td>{item.position}</td>
                   <td>{item.trainingPeriod}</td>
                   <td>{item.AssignedProject}</td>
                   <td>
-                    <button className='backlogclick' onClick={() => alert(`Clicked ${item.backlog}`)}>
+                    <button className='backlogclick' onClick={gotoProductBacklog}>
                       <img src="https://cdn-icons-png.flaticon.com/128/5084/5084624.png" alt={item.backlog} style={{ width: '40px', height: '40px' }} />
                     </button>
                   </td>

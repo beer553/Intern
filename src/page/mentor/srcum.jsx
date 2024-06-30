@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+ import React, { useState } from 'react';
 import './srcum.css';
 import Headmentor from './headmentor';
 import { useNavigate } from 'react-router-dom';
@@ -21,7 +21,7 @@ const Scrum = () => {
   const navigate = useNavigate();
 
   const data = [
-    { firstName: 'Phurin', lastName: 'Chairoek', id: '0001-123005', status: 'กำลังฝึกงาน', position: 'Fullstack', trainingPeriod: '01/01/2024 - 31/12/2025', AssignedProject: 'Intern', backlog: 'Project A' },
+    { firstName: 'Phurin', lastName: 'Chairoek', id: '0001-123005', nickname: 'Sun',status: 'กำลังฝึกงาน', position: 'Fullstack', trainingPeriod: '01/01/2024 - 31/12/2025', AssignedProject: 'Intern', backlog: 'Project A' },
   ];
   const [doing, setDoing] = useState('');
   const [done, setDone] = useState('');
@@ -103,6 +103,9 @@ const Scrum = () => {
     setToDoScore(score);
     setIsToDoScored(true);
   };
+  const gotoProductBacklog = () => {
+    navigate('/BLProject');
+  };
 
 
   return (
@@ -120,6 +123,7 @@ const Scrum = () => {
               <tr>
                 <th>No.</th>
                 <th>ID Name Lastname</th>
+                <th>Nickname</th>
                 <th>Status</th>
                 <th>Position</th>
                 <th>Training Time</th>
@@ -132,12 +136,13 @@ const Scrum = () => {
                 <tr key={index}>
                   <td>{index + 1}</td>
                   <td>{`${item.id} ${item.firstName} ${item.lastName}`}</td>
+                  <td>{item.nickname}</td>
                   <td>{item.status}</td>
                   <td>{item.position}</td>
                   <td>{item.trainingPeriod}</td>
                   <td>{item.AssignedProject}</td>
                   <td>
-                    <button className='backlogclick' onClick={() => alert(`Clicked ${item.backlog}`)}>
+                    <button className='backlogclick' onClick={gotoProductBacklog}>
                       <img src="https://cdn-icons-png.flaticon.com/128/5084/5084624.png" alt={item.backlog} style={{ width: '40px', height: '40px' }} />
                     </button>
                   </td>
@@ -403,20 +408,17 @@ const Scrum = () => {
             </div>
           </div>
         </div>
-      </div>
       <div className='savescrum' onClick={handleSave}>
-        บันทึก
-        <button className='savescrum-1'>
-          <img className='savescrum-2' src="https://cdn-icons-png.flaticon.com/128/6276/6276686.png" alt="" />
-        </button>
+         <h3>บันทึก</h3>
+          <img className='savescrum-1' src="https://cdn-icons-png.flaticon.com/128/6276/6276686.png" alt="" />
         {showPopup && (
           <div className="popup">
             <div className="popup-inner">
               <h2>บันทึกสำเร็จ!</h2>
-
             </div>
           </div>
         )}
+      </div>
       </div>
       <div className='footnote'>
         <p>ติดต่อสอบถาม New Way Of Work System</p>

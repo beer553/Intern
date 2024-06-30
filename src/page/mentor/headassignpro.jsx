@@ -3,13 +3,13 @@ import './project.css';
 import { useNavigate } from 'react-router-dom';
 import SearchComponent from './searchmentor';
 
-function Headmentor({ projects, onSearchResults }) {
+function Headmentor1({ profiles, onSearchResults }) {
     const navigate = useNavigate();
     const [loggedInUser, setLoggedInUser] = useState('สุพรรษา มูลศิริ');
 
     const handleSearch = (query) => {
-        const results = projects.filter((project) =>
-            project.projectName.toLowerCase().includes(query.toLowerCase())
+        const results = profiles.filter((profile) =>
+            profile.nickname.toLowerCase().includes(query.toLowerCase())
         );
         onSearchResults(results);
     };
@@ -37,4 +37,4 @@ function Headmentor({ projects, onSearchResults }) {
     );
 }
 
-export default Headmentor;
+export default Headmentor1;

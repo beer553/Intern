@@ -33,10 +33,15 @@
   margin-left: 75px;
 }
 
-.th-1,
+.th-1 {
+  padding: 8px;
+  text-align: left;
+  font-size: 30px;
+}
 .td-1 {
   padding: 8px;
-  text-align: center;
+  text-align: left;
+  font-size: 20px;
 }
 
 .status {
@@ -44,12 +49,18 @@
   border-radius: 15px;
 }
 
-.status-active-1 {
+.status-active-G {
   border-radius: 10px;
-  color: rgb(0, 255, 51);
+  color: green;
   height: 20px;
   width: 120px;
+}
 
+.status-active-B {
+  border-radius: 10px;
+  color:blue;
+  height: 20px;
+  width: 120px;
 }
 
 .backlog-icon {
@@ -59,6 +70,7 @@
   background-size: cover;
   display: inline-block;
   cursor: pointer;
+  margin-left: 20px;
 }
 
 .footer-2 {
@@ -70,27 +82,30 @@
   margin-bottom: 0px;
   margin-top: -66px;
 }
-
+.td-2 {
+  text-align: left;
+}
 .BL {
-  width: 130px;
-  height: 130px;
+  width: 80px;
+  height: 80px;
   margin-left: 100px;
 }
 
 .BL-1 {
   margin-left: 40px;
-  margin-top: 25px;
-  font-size: 65px;
-}
-
-.main-1 {
-  height: 700px;
+  margin-top: 15px;
+  font-size: 40px;
 }
 
 .BL-img {
   display: flex;
   color: #5C5A5A;
 }
+
+.main-1 {
+  height: 700px;
+}
+
 
 .table-2 {
   border-bottom: 2px solid #000000;
